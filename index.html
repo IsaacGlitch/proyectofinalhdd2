@@ -4,12 +4,13 @@
     <meta charset="UTF-8">
     <title>GameHub - Tienda Gamer</title>
     <link rel="stylesheet" href="estilos.css">
-    <link rel="shortcut icon" href="Logo.png" type="image/x-icon">
+    <link rel="shortcut icon" href="imagenes/Logo.png" type="image/x-icon">
 </head>
 <body>
 
 <header>
     <div class="logo">GameHub</div>
+
     <nav>
         <ul>
             <li>Inicio</li>
@@ -18,31 +19,105 @@
             <li>Accesorios</li>
         </ul>
     </nav>
+
+    <div class="auth">
+        <button onclick="mostrarLogin()">Iniciar Sesión</button>
+        <button onclick="mostrarRegistro()">Registrarse</button>
+    </div>
 </header>
 
-<section class="banner">
-</section>
+<!-- LOGIN -->
+<div id="loginForm" class="modal">
+    <div class="modal-content">
+        <h2>Iniciar Sesión</h2>
+        <input type="text" id="loginUser" placeholder="Usuario">
+        <input type="password" id="loginPass" placeholder="Contraseña">
+        <button onclick="iniciarSesion()">Ingresar</button>
+        <button onclick="cerrarModal()">Cerrar</button>
+    </div>
+</div>
+
+<!-- REGISTRO -->
+<div id="registroForm" class="modal">
+    <div class="modal-content">
+        <h2>Registrarse</h2>
+        <input type="text" id="regUser" placeholder="Usuario">
+        <input type="password" id="regPass" placeholder="Contraseña">
+        <button onclick="registrar()">Registrar</button>
+        <button onclick="cerrarModal()">Cerrar</button>
+    </div>
+</div>
+
+<section class="banner"></section>
 
 <section class="section">
-    <center><h1>Bienvenido a GameHub 🎮</h1></center>
-    <h2>Novedades</h2>
-    <div class="productos">
+    <center><h1>Bienvenido a GameHub</h1></center>
 
-        <div class="card">
-            <img src="tecladogamer.webp" width="400px" height="300px">
-            <h3>Teclado Gamer</h3>
-            <p class="precio">S/ 199.90</p>
-            <button onclick="agregarCarrito('Teclado Gamer')">Comprar</button>
-        </div>
-
-        <div class="card">
-            <img src="audifonosgamer.webp"  width="400px" height="300px">
-            <h3>Audífonos Gamer</h3>
-            <p class="precio">S/ 249.90</p>
-            <button onclick="agregarCarrito('Audífonos Gamer')">Comprar</button>
-        </div>
-
+    <h2>Categorías</h2>
+<div class="productos">
+    <div class="card" onclick="seleccionarCategoria(event, 'PC Gaming')">
+        <img src="imagenes/pcgaming.jpg">
+        <h3>PC Gaming</h3>
     </div>
+
+    <div class="card" onclick="seleccionarCategoria(event, 'PlayStation')">
+        <img src="imagenes/playstation5.webp">
+        <h3>PlayStation</h3>
+    </div>
+
+    <div class="card" onclick="seleccionarCategoria(event, 'Xbox')">
+        <img src="imagenes/xboxseriesx.webp">
+        <h3>Xbox</h3>
+    </div>
+</div>
+
+<h2>Novedades</h2>
+<div class="productos">
+    <div class="card">
+        <img src="imagenes/mousergb.png">
+        <h3>Mouse RGB</h3>
+        <button onclick="agregarCarrito('Mouse RGB')">Comprar</button>
+    </div>
+
+    <div class="card">
+        <img src="imagenes/monitorgamer.webp">
+        <h3>Monitor Gamer</h3>
+        <button onclick="agregarCarrito('Monitor Gamer')">Comprar</button>
+    </div>
+</div>
+
+<h2>Más Vendidos</h2>
+<div class="productos">
+    <div class="card">
+        <img src="imagenes/tecladogamer.webp">
+        <h3>Teclado Mecánico</h3>
+        <button onclick="agregarCarrito('Teclado Mecánico')">Comprar</button>
+    </div>
+
+    <div class="card">
+        <img src="imagenes/audifonosgamer.webp">
+        <h3>Audífonos Gamer</h3>
+        <button onclick="agregarCarrito('Audífonos Gamer')">Comprar</button>
+    </div>
+</div>
+
+<h2>Promociones</h2>
+<div class="productos">
+    <div class="card">
+        <img src="imagenes/combogamer.webp">
+        <h3>Combo Gamer</h3>
+        <p class="precio">S/ 299.90</p>
+        <button onclick="agregarCarrito('Combo Gamer')">Comprar</button>
+    </div>
+
+    <div class="card">
+        <img src="imagenes/sillagamer.jpg">
+        <h3>Silla Gamer</h3>
+        <p class="precio">S/ 499.90</p>
+        <button onclick="agregarCarrito('Silla Gamer')">Comprar</button>
+    </div>
+</div>
+
 </section>
 
 <footer>
