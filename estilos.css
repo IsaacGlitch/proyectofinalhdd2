@@ -1,0 +1,88 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #0f0f0f;
+    color: white;
+}
+
+/* HEADER */
+header {
+    background: black;
+    padding: 15px 40px;
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 2px solid #00ffc3;
+}
+
+.logo {
+    font-size: 24px;
+    color: #00ffc3;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+nav ul li:hover {
+    color: #00ffc3;
+    cursor: pointer;
+}
+
+/* BANNER */
+.banner {
+    height: 800px;
+    width: 100%;
+    background: url('Banner.png') center/cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* SECCIÓN */
+.section {
+    padding: 30px;
+}
+
+/* PRODUCTOS */
+.productos {
+    display: flex;
+    gap: 20px;
+}
+
+.card {
+    background: #1a1a1a;
+    padding: 15px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.card img {
+    width: 100%;
+}
+
+.precio {
+    color: #00ffc3;
+    font-weight: bold;
+}
+
+/* BOTÓN */
+button {
+    background: #00ffc3;
+    border: none;
+    padding: 10px;
+    margin-top: 10px;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #00cfa0;
+}
+
+/* FOOTER */
+footer {
+    background: black;
+    text-align: center;
+    padding: 20px;
+}
