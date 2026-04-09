@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="estilosconsola.css">
+
+</head>
+<body>
+    <div class="container">
+    <div class="carousel">
+    <div class="carousel-track">
+        <div class="carousel-slide">
+            <img src="https://picsum.photos/id/1015/800/400" alt="Imagen 1">
+            <div class="caption">Paisaje Natural</div>
+        </div>
+        <div class="carousel-slide">
+            <img src="https://picsum.photos/id/1016/800/400" alt="Imagen 2">
+            <div class="caption">Montañas</div>
+        </div>
+        <div class="carousel-slide">
+            <img src="https://picsum.photos/id/1018/800/400" alt="Imagen 3">
+            <div class="caption">Bosque</div>
+        </div>
+    </div>
+
+    <button class="carousel-btn prev">&#10094;</button>
+    <button class="carousel-btn next">&#10095;</button>
+
+    <div class="carousel-dots">
+        <span class="dot active"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+    </div>
+</div>
+
+    
+    <div class="filter-container">
+    <div class="filter-title">🎮 Filtrar por Consola</div>
+
+    <label class="filter-option">
+        <input type="checkbox" name="console">
+        <span class="custom-checkbox"></span>
+        <span class="console-icon playstation">🎮</span>
+        <span class="console-name">PlayStation 5</span>
+    </label>
+
+    <label class="filter-option">
+        <input type="checkbox" name="console">
+        <span class="custom-checkbox"></span>
+        <span class="console-icon playstation">🎮</span>
+        <span class="console-name">PlayStation 4</span>
+    </label>
+
+    <label class="filter-option">
+        <input type="checkbox" name="console">
+        <span class="custom-checkbox"></span>
+        <span class="console-icon xbox">🎮</span>
+        <span class="console-name">Xbox Series X/S</span>
+    </label>
+
+    <label class="filter-option">
+        <input type="checkbox" name="console">
+        <span class="custom-checkbox"></span>
+        <span class="console-icon xbox">🎮</span>
+        <span class="console-name">Xbox One</span>
+    </label>
+
+    <label class="filter-option">
+        <input type="checkbox" name="console">
+        <span class="custom-checkbox"></span>
+        <span class="console-icon nintendo">🎮</span>
+        <span class="console-name">Nintendo Switch</span>
+    </label>
+
+    <button class="apply-btn">Aplicar Filtro</button>
+</div>
+</div>
+<script>
+    const track = document.querySelector('.carousel-track');
+    const slides = Array.from(track.children);
+    const nextButton = document.querySelector('.next');
+    const prevButton = document.querySelector('.prev');
+    const dotsNav = document.querySelector('.carousel-dots');
+    const dots = Array.from(dotsNav.children);
+
+    let currentIndex = 0;
+
+    function updateCarousel(index) {
+        track.style.transform = 'translateX(-' + index * 100 + '%)';
+        dots.forEach(dot => dot.classList.remove('active'));
+        dots[index].classList.add('active');
+        currentIndex = index;
+    }
+
+    nextButton.addEventListener('click', () => {
+        const nextIndex = (currentIndex + 1) % slides.length;
+        updateCarousel(nextIndex);
+    });
+
+    prevButton.addEventListener('click', () => {
+        const prevIndex = (currentIndex - 1 + slides.length) % slides.length;
+        updateCarousel(prevIndex);
+    });
+
+    dots.forEach((dot, index) => {
+        dot.addEventListener('click', () => {
+            updateCarousel(index);
+        });
+    });
+
+    setInterval(() => {
+        const nextIndex = (currentIndex + 1) % slides.length;
+        updateCarousel(nextIndex);
+    }, 5000);
+</script>
+</body>
+</html>
