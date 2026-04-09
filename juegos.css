@@ -1,0 +1,166 @@
+/* =========================
+   CONTENEDOR PRINCIPAL
+========================= */
+.contenedor-juegos {
+    padding: 40px;
+}
+
+/* TÍTULO */
+.contenedor-juegos h2 {
+    text-align: center;
+    margin-bottom: 30px;
+    color: #00ffc3;
+    font-size: 32px;
+}
+
+/* =========================
+   FILTROS
+========================= */
+.filtros {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 30px;
+    flex-wrap: wrap;
+}
+
+.filtros input,
+.filtros select {
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+    font-size: 14px;
+}
+
+/* =========================
+   GRID DE JUEGOS
+========================= */
+.grid-juegos {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 25px;
+}
+
+/* =========================
+   TARJETAS (CARDS)
+========================= */
+.grid-juegos .card {
+    background: #1a1a1a; /* usa tu mismo estilo */
+    padding: 15px;
+    border-radius: 10px;
+    text-align: center;
+    position: relative;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+/* EFECTO HOVER */
+.grid-juegos .card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 15px #00ffc3;
+}
+
+/* IMAGEN */
+.grid-juegos .card img {
+    width: 250px;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+/* TÍTULO DEL JUEGO */
+.grid-juegos .card h3 {
+    margin: 10px 0;
+    font-size: 18px;
+}
+
+/* PRECIO */
+.grid-juegos .precio {
+    color: #00ffc3;
+    font-weight: bold;
+    font-size: 18px;
+    margin: 10px 0;
+}
+
+/* BOTÓN */
+.grid-juegos button {
+    background: #00ffc3;
+    color: black;
+    border: none;
+    padding: 10px;
+    width: 100%;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.grid-juegos button:hover {
+    background: #00cfa0;
+}
+
+/* =========================
+   ETIQUETA DE OFERTA
+========================= */
+.oferta {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background: red;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+/* =========================
+   PAGINACIÓN
+========================= */
+.paginacion {
+    text-align: center;
+    margin-top: 40px;
+}
+
+.paginacion button {
+    margin: 5px;
+    padding: 8px 12px;
+    background: #00ffc3;
+    border: none;
+    cursor: pointer;
+}
+
+.paginacion button:hover {
+    background: #00cfa0;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+/* Tablets */
+@media (max-width: 1024px) {
+    .grid-juegos {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Celulares */
+@media (max-width: 600px) {
+    .grid-juegos {
+        grid-template-columns: 1fr;
+    }
+
+    .contenedor-juegos {
+        padding: 20px;
+    }
+
+    .filtros {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .banner {
+        height: 300px;
+    }
+}

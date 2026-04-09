@@ -1,34 +1,111 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
-    <title>GameHub - Tienda Gamer</title>
+    <title>GameHub - Juegos</title>
     <link rel="stylesheet" href="estilos.css">
+    <link rel="stylesheet" href="juegos.css">
     <link rel="shortcut icon" href="Logo.png" type="image/x-icon">
 </head>
+
 <body>
 
-<header>
-    <div class="logo">GameHub</div>
-    <nav>
-        <ul>
-            <li>Inicio</li>
-            <li>Consolas</li>
-            <li>Juegos</li>
-            <li>Accesorios</li>
-        </ul>
-    </nav>
-</header>
+    <!-- HEADER -->
+    <header>
+        <div class="logo">GameHub</div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li>Consolas</li>
+                <li><a href="juegos.html">Juegos</a></li>
+                <li>Accesorios</li>
+            </ul>
+        </nav>
+    </header>
 
-<section class="banner">
-</section>
+    <!-- BANNER -->
+    <section class="banner"></section>
 
+    <!-- SECCIÓN JUEGOS -->
+    <section class="contenedor-juegos">
 
+        <h2>Juegos</h2>
 
-<footer>
-    <p>© 2026 GameHub</p>
-</footer>
+        <!-- FILTROS -->
+        <div class="filtros">
+            <input type="text" id="buscador" placeholder="Buscar juego...">
 
-<script src="funciones.js"></script>
+            <select id="ordenar">
+                <option value="">Ordenar por</option>
+                <option value="menor">Precio menor a mayor</option>
+                <option value="mayor">Precio mayor a menor</option>
+            </select>
+
+            <select id="plataforma">
+                <option value="">Plataforma</option>
+                <option value="PS5">PS5</option>
+                <option value="Xbox">Xbox</option>
+                <option value="Nintendo">Nintendo</option>
+            </select>
+        </div>
+
+        <!-- GRID DE JUEGOS -->
+        <div class="grid-juegos">
+
+            <!-- JUEGO 1 -->
+            <div class="card" data-precio="279.90" data-plataforma="PS5">
+                <span class="oferta">-10%</span>
+                <img src="J1.png" alt="Spiderman">
+                <h3>Spider-Man 2</h3>
+                <p class="precio">S/279.90</p>
+                <button>Agregar al carrito</button>
+            </div>
+
+            <!-- JUEGO 2 -->
+            <div class="card" data-precio="249.90" data-plataforma="PS5">
+                <img src="J2.png" alt="FIFA">
+                <h3>EA Sports FC 24</h3>
+                <p class="precio">S/249.90</p>
+                <button>Agregar al carrito</button>
+            </div>
+
+            <!-- JUEGO 3 -->
+            <div class="card" data-precio="299.90" data-plataforma="Nintendo">
+                <span class="oferta">-15%</span>
+                <img src="J3.png" alt="Zelda">
+                <h3>Zelda: Tears of the Kingdom</h3>
+                <p class="precio">S/299.90</p>
+                <button>Agregar al carrito</button>
+            </div>
+
+            <!-- JUEGO 4 -->
+            <div class="card" data-precio="269.90" data-plataforma="Xbox">
+                <img src="J4.png" alt="COD">
+                <h3>Call of Duty MW3</h3>
+                <p class="precio">S/269.90</p>
+                <button>Agregar al carrito</button>
+            </div>
+
+        </div>
+
+        <!-- PAGINACIÓN -->
+        <div class="paginacion">
+            <button>1</button>
+            <button>2</button>
+            <button>3</button>
+        </div>
+
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>© 2026 GameHub</p>
+    </footer>
+
+    <!-- JS -->
+    <script src="funciones.js"></script>
+
 </body>
+
 </html>
