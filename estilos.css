@@ -67,17 +67,33 @@ nav ul li:hover {
 .productos {
     display: flex;
     gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
 }
 
+/* CARD */
 .card {
     background: #1a1a1a;
     padding: 15px;
     border-radius: 10px;
     text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
 }
 
 .card img {
     width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 15px #00ffc3;
+}
+
+.card.seleccionado {
+    border: 2px solid #00ffc3;
 }
 
 .precio {
@@ -85,7 +101,7 @@ nav ul li:hover {
     font-weight: bold;
 }
 
-/* BOTÓN */
+/* BOTÓN GENERAL */
 button {
     background: #00ffc3;
     border: none;
@@ -133,32 +149,105 @@ footer {
     border-radius: 5px;
 }
 
-/* IMÁGENES */
-.card img {
-    width: 100%;
-    height: 180px;
-    object-fit: cover;
+/* ========================= */
+/* 🎮 CINTA CON FLECHAS */
+/* ========================= */
+
+.contenedor-cinta {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+/* Cinta (sin scroll visible) */
+.cinta-categorias {
+    display: flex;
+    gap: 20px;
+    overflow: hidden;
+    padding: 20px;
+    scroll-behavior: smooth;
+}
+
+/* Cards dentro de la cinta */
+.cinta-categorias .card {
+    min-width: 200px;
+    flex: 0 0 auto;
+}
+
+/* Flechas */
+.flecha {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0,0,0,0.6);
+    color: white;
+    border: none;
+    font-size: 30px;
+    cursor: pointer;
+    padding: 10px;
+    border-radius: 50%;
+    z-index: 10;
+    transition: 0.3s;
+}
+
+.flecha:hover {
+    background: rgba(0,0,0,0.9);
+}
+
+.izquierda {
+    left: 10px;
+}
+
+.derecha {
+    right: 10px;
+}
+
+/* CONTENEDOR PRODUCTOS */
+.productos {
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+/* CARD PRODUCTO */
+.producto-card {
+    background: #1a1a1a;
     border-radius: 10px;
+    overflow: hidden;
+    width: 220px;
+    transition: 0.3s;
 }
 
-/* ANIMACIÓN */
-.card {
-    transition: transform 0.3s, box-shadow 0.3s;
-}
-
-.card:hover {
-    transform: scale(1.05);
+.producto-card:hover {
+    transform: translateY(-5px);
     box-shadow: 0 0 15px #00ffc3;
 }
 
-/* SELECCIÓN */
-.card.seleccionado {
-    border: 2px solid #00ffc3;
+/* IMAGEN */
+.producto-card img {
+    width: 100%;
+    height: 180px;
+    object-fit: contain; /* 👈 clave para estilo tipo tienda */
+    background: #111;
 }
 
-.productos {
-    display: flex;
-    gap: 20px;
-    justify-content: center; /* 👈 centra horizontalmente */
-    flex-wrap: wrap; /* 👈 evita que se desborde */
+/* INFO */
+.info {
+    padding: 10px;
+    text-align: left;
+}
+
+/* NOMBRE */
+.nombre {
+    font-size: 14px;
+    margin: 5px 0;
+    color: #ccc;
+}
+
+/* PRECIO */
+.precio {
+    font-size: 18px;
+    font-weight: bold;
+    color: #00ffc3;
 }

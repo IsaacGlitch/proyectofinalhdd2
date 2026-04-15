@@ -53,70 +53,109 @@
 <section class="section">
     <center><h1>Bienvenido a GameHub</h1></center>
 
+    <!-- CATEGORÍAS -->
     <h2>Categorías</h2>
-<div class="productos">
-    <div class="card" onclick="seleccionarCategoria(event, 'PC Gaming')">
-        <img src="imagenes/pcgaming.jpg">
-        <h3>PC Gaming</h3>
+
+    <div class="contenedor-cinta">
+        <button class="flecha izquierda" onclick="scrollCategorias(-1)">&#10094;</button>
+
+        <div class="cinta-categorias" id="cinta">
+
+            <div class="card">
+                <img src="imagenes/pcgaming.jpg">
+                <h3>PC Gaming</h3>
+            </div>
+
+            <div class="card">
+                <img src="imagenes/consolas.jpg">
+                <h3>Consolas</h3>
+            </div>
+
+            <div class="card">
+                <img src="imagenes/perifericos.jpg">
+                <h3>Perifericos</h3>
+            </div>
+
+            <div class="card">
+                <img src="imagenes/sillasgamer.png">
+                <h3>Sillas Gamer</h3>
+            </div>
+
+             <div class="card">
+                <img src="imagenes/coleccionables.jpg">
+                <h3>Coleccionables</h3>
+            </div>
+
+            <div class="card">
+                <img src="imagenes/Accesorios.webp">
+                <h3>Accesorios</h3>
+            </div>
+
+            <div class="card">
+                <img src="imagenes/Streaming.webp">
+                <h3>Streaming</h3>
+            </div>
+
+        </div>
+
+        <button class="flecha derecha" onclick="scrollCategorias(1)">&#10095;</button>
     </div>
 
-    <div class="card" onclick="seleccionarCategoria(event, 'PlayStation')">
-        <img src="imagenes/playstation5.webp">
-        <h3>PlayStation</h3>
-    </div>
+    <!-- NOVEDADES -->
+    <h2>Novedades</h2>
+    <div class="productos">
 
-    <div class="card" onclick="seleccionarCategoria(event, 'Xbox')">
-        <img src="imagenes/xboxseriesx.webp">
-        <h3>Xbox</h3>
-    </div>
-</div>
-
-<h2>Novedades</h2>
-<div class="productos">
-    <div class="card">
+    <div class="producto-card">
         <img src="imagenes/mousergb.png">
-        <h3>Mouse RGB</h3>
-        <button onclick="agregarCarrito('Mouse RGB')">Comprar</button>
+        <div class="info">
+            <p class="nombre">Mouse RGB Gamer Profesional</p>
+            <p class="precio">S/ 79.90</p>
+        </div>
     </div>
 
-    <div class="card">
+    <div class="producto-card">
         <img src="imagenes/monitorgamer.webp">
-        <h3>Monitor Gamer</h3>
-        <button onclick="agregarCarrito('Monitor Gamer')">Comprar</button>
+        <div class="info">
+            <p class="nombre">Monitor Gamer 144Hz Full HD</p>
+            <p class="precio">S/ 279.90</p>
+        </div>
     </div>
+
 </div>
 
-<h2>Más Vendidos</h2>
-<div class="productos">
-    <div class="card">
-        <img src="imagenes/tecladogamer.webp">
-        <h3>Teclado Mecánico</h3>
-        <button onclick="agregarCarrito('Teclado Mecánico')">Comprar</button>
+    <!-- MÁS VENDIDOS -->
+    <h2>Más Vendidos</h2>
+    <div class="productos">
+        <div class="card">
+            <img src="imagenes/tecladogamer.webp">
+            <h3>Teclado Mecánico</h3>
+            <button onclick="agregarCarrito('Teclado Mecánico')">Comprar</button>
+        </div>
+
+        <div class="card">
+            <img src="imagenes/audifonosgamer.webp">
+            <h3>Audífonos Gamer</h3>
+            <button onclick="agregarCarrito('Audífonos Gamer')">Comprar</button>
+        </div>
     </div>
 
-    <div class="card">
-        <img src="imagenes/audifonosgamer.webp">
-        <h3>Audífonos Gamer</h3>
-        <button onclick="agregarCarrito('Audífonos Gamer')">Comprar</button>
-    </div>
-</div>
+    <!-- PROMOCIONES -->
+    <h2>Promociones</h2>
+    <div class="productos">
+        <div class="card">
+            <img src="imagenes/combogamer.webp">
+            <h3>Combo Gamer</h3>
+            <p class="precio">S/ 299.90</p>
+            <button onclick="agregarCarrito('Combo Gamer')">Comprar</button>
+        </div>
 
-<h2>Promociones</h2>
-<div class="productos">
-    <div class="card">
-        <img src="imagenes/combogamer.webp">
-        <h3>Combo Gamer</h3>
-        <p class="precio">S/ 299.90</p>
-        <button onclick="agregarCarrito('Combo Gamer')">Comprar</button>
+        <div class="card">
+            <img src="imagenes/sillagamer.jpg">
+            <h3>Silla Gamer</h3>
+            <p class="precio">S/ 499.90</p>
+            <button onclick="agregarCarrito('Silla Gamer')">Comprar</button>
+        </div>
     </div>
-
-    <div class="card">
-        <img src="imagenes/sillagamer.jpg">
-        <h3>Silla Gamer</h3>
-        <p class="precio">S/ 499.90</p>
-        <button onclick="agregarCarrito('Silla Gamer')">Comprar</button>
-    </div>
-</div>
 
 </section>
 

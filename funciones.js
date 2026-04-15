@@ -1,7 +1,14 @@
+/* ========================= */
+/* CARRITO */
+/* ========================= */
 function agregarCarrito(producto) {
-    alert(producto + " agregado al carrito 🛒");
+    alert(`${producto} agregado al carrito 🛒`);
 }
 
+
+/* ========================= */
+/* MODALES */
+/* ========================= */
 function mostrarLogin() {
     document.getElementById("loginForm").style.display = "flex";
 }
@@ -15,9 +22,18 @@ function cerrarModal() {
     document.getElementById("registroForm").style.display = "none";
 }
 
+
+/* ========================= */
+/* AUTENTICACIÓN */
+/* ========================= */
 function registrar() {
-    let user = document.getElementById("regUser").value;
-    let pass = document.getElementById("regPass").value;
+    const user = document.getElementById("regUser").value.trim();
+    const pass = document.getElementById("regPass").value.trim();
+
+    if (!user || !pass) {
+        alert("Completa todos los campos");
+        return;
+    }
 
     localStorage.setItem(user, pass);
     alert("Usuario registrado correctamente");
@@ -25,24 +41,45 @@ function registrar() {
 }
 
 function iniciarSesion() {
-    let user = document.getElementById("loginUser").value;
-    let pass = document.getElementById("loginPass").value;
+    const user = document.getElementById("loginUser").value.trim();
+    const pass = document.getElementById("loginPass").value.trim();
 
-    let storedPass = localStorage.getItem(user);
+    const storedPass = localStorage.getItem(user);
 
     if (storedPass === pass) {
-        alert("Bienvenido " + user);
+        alert(`Bienvenido ${user}`);
+        cerrarModal();
     } else {
         alert("Datos incorrectos");
     }
 }
 
-function seleccionarCategoria(event, categoria) {
-    alert("Seleccionaste: " + categoria);
 
-    document.querySelectorAll(".card").forEach(card => {
+/* ========================= */
+/* CATEGORÍAS */
+/* ========================= */
+function seleccionarCategoria(event, categoria) {
+    alert(`Seleccionaste: ${categoria}`);
+
+    // Quitar selección previa SOLO en categorías
+    document.querySelectorAll(".cinta-categorias .card").forEach(card => {
         card.classList.remove("seleccionado");
     });
 
     event.currentTarget.classList.add("seleccionado");
+}
+
+
+/* ========================= */
+/* CINTA CON FLECHAS */
+/* ========================= */
+function scrollCategorias(direccion) {
+    const contenedor = document.getElementById("cinta");
+
+    const scrollAmount = 300;
+
+    contenedor.scrollBy({
+        left: direccion * scrollAmount,
+        behavior: "smooth"
+    });
 }
