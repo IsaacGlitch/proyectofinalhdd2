@@ -9,6 +9,59 @@
 <body>
 
 <header>
+    <div class="logo">GameHub</div>
+    <nav>
+        <ul>
+            <li><a href="index.html">Inicio</a></li>
+            <li>Consolas</li>
+            <li>Juegos</li>
+            <li><a href="accesorios.html">Accesorios</a></li>
+        </ul>
+    </nav>
+</header>
+
+<section class="banner">
+</section>
+
+<section class="section">
+    <center><h1>Bienvenido a GameHub 🎮</h1></center>
+    <h2>Novedades</h2>
+    <div class="productos">
+
+        <div class="card">
+            <img src="tecladogamer.webp" width="400px" height="300px">
+            <h3>Teclado Gamer</h3>
+            <p class="precio">S/ 199.90</p>
+            <button onclick="agregarCarrito('Teclado Gamer')">Comprar</button>
+        </div>
+
+        <div class="card">
+            <img src="audifonosgamer.webp"  width="400px" height="300px">
+            <h3>Audífonos Gamer</h3>
+            <p class="precio">S/ 249.90</p>
+            <button onclick="agregarCarrito('Audífonos Gamer')">Comprar</button>
+        </div>
+
+    </div>
+</section>
+
+<footer>
+    <p>© 2026 GameHub</p>
+</footer>
+
+<script src="funciones.js"></script>
+</body>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>GameHub - Tienda Gamer</title>
+    <link rel="stylesheet" href="estilos.css">
+    <link rel="shortcut icon" href="Logo.png" type="image/x-icon">
+</head>
+<body>
+
+<header>
     <div class="header-left">
         <div class="logo">GameHub</div>
         <button class="btn-login" onclick="abrirLogin()">Iniciar sesión</button>
