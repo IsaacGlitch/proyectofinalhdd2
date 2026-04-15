@@ -9,7 +9,11 @@
 <body>
 
 <header>
-    <div class="logo">GameHub</div>
+    <div class="header-left">
+        <div class="logo">GameHub</div>
+        <button class="btn-login" onclick="abrirLogin()">Iniciar sesión</button>
+    </div>
+
     <nav>
         <ul>
             <li>Inicio</li>
@@ -20,14 +24,22 @@
     </nav>
 </header>
 
-<section class="banner">
-</section>
-
-
+<section class="banner"></section>
 
 <footer>
     <p>© 2026 GameHub</p>
 </footer>
+
+<!-- MODAL LOGIN -->
+<div id="modalLogin" class="modal">
+    <div class="modal-contenido">
+        <span class="cerrar" onclick="cerrarLogin()">&times;</span>
+        <h2>Iniciar Sesión 🎮</h2>
+        <input type="text" id="usuario" placeholder="Usuario">
+        <input type="password" id="password" placeholder="Contraseña">
+        <button onclick="iniciarSesion()">Entrar</button>
+    </div>
+</div>
 
 <script src="funciones.js"></script>
 </body>
