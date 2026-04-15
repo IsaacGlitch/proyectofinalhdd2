@@ -9,34 +9,38 @@
 <body>
 
 <header>
-    <div class="logo">GameHub</div>
+    <div class="header-left">
+        <div class="logo">GameHub</div>
+        <button class="btn-login" onclick="abrirLogin()">Iniciar sesión</button>
+    </div>
+
     <nav>
         <ul>
             <li>Inicio</li>
             <li>Consolas</li>
-            <li>Juegos <a href="juegos.html"></a></li>
+            <li><a href="juegos.html">Juegos</a></li>
             <li>Accesorios</li>
         </ul>
     </nav>
 </header>
 
-<section class="banner">
-</section>
+<section class="banner"></section>
 
 <section class="section">
-    <center><h1>Bienvenido a GameHub 🎮</h1></center>
+    <h1 style="text-align: center;">Bienvenido a GameHub 🎮</h1>
     <h2>Novedades</h2>
+
     <div class="productos">
 
         <div class="card">
-            <img src="tecladogamer.webp" width="400px" height="300px">
+            <img src="tecladogamer.webp" alt="Teclado Gamer">
             <h3>Teclado Gamer</h3>
             <p class="precio">S/ 199.90</p>
             <button onclick="agregarCarrito('Teclado Gamer')">Comprar</button>
         </div>
 
         <div class="card">
-            <img src="audifonosgamer.webp"  width="400px" height="300px">
+            <img src="audifonosgamer.webp" alt="Audífonos Gamer">
             <h3>Audífonos Gamer</h3>
             <p class="precio">S/ 249.90</p>
             <button onclick="agregarCarrito('Audífonos Gamer')">Comprar</button>
@@ -48,6 +52,17 @@
 <footer>
     <p>© 2026 GameHub</p>
 </footer>
+
+<!-- MODAL LOGIN -->
+<div id="modalLogin" class="modal">
+    <div class="modal-contenido">
+        <span class="cerrar" onclick="cerrarLogin()">&times;</span>
+        <h2>Iniciar Sesión 🎮</h2>
+        <input type="text" id="usuario" placeholder="Usuario">
+        <input type="password" id="password" placeholder="Contraseña">
+        <button onclick="iniciarSesion()">Entrar</button>
+    </div>
+</div>
 
 <script src="funciones.js"></script>
 </body>
