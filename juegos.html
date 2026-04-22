@@ -19,7 +19,7 @@
                 <li><a href="index.html">Inicio</a></li>
                 <li><a href="consola.html">Consolas</a></li>
                 <li><a href="juegos.html">Juegos</a></li>
-                <li>Accesorios</li>
+                <li><a href="accesorios.html">Accesorios</a></li>
             </ul>
         </nav>
     </header>
@@ -48,43 +48,67 @@
                 <option value="Xbox">Xbox</option>
                 <option value="Nintendo">Nintendo</option>
             </select>
+
+            <select id="categoria">
+                <option value="">Categoría</option>
+                <option value="accion">Acción</option>
+                <option value="aventura">Aventura</option>
+                <option value="deportes">Deportes</option>
+            </select>
         </div>
 
         <!-- GRID DE JUEGOS -->
-        <div class="grid-juegos">
+        <div class="grid-juegos" id="grid">
 
             <!-- JUEGO 1 -->
-            <div class="card" data-precio="279.90" data-plataforma="PS5">
+            <div class="card" data-precio="279.90" data-plataforma="PS5" data-categoria="accion">
                 <span class="oferta">-10%</span>
+                <button class="favorito">❤️</button>
                 <img src="J1.png" alt="Spiderman">
                 <h3>Spider-Man 2</h3>
-                <p class="precio">S/279.90</p>
-                <button>Agregar al carrito</button>
+                <p class="extra">PS5 | Acción | 2023</p>
+                <div class="estrellas">⭐⭐⭐⭐☆</div>
+                <p class="precio"><span class="antes">S/310.00</span>
+                    S/279.90</p>
+                <button onclick="agregarAlCarrito('Spider-Man 2',279.90)">Agregar al carrito</button>
+                <button onclick="abrirModal('Spider-Man 2')">Ver más</button>
             </div>
 
             <!-- JUEGO 2 -->
-            <div class="card" data-precio="249.90" data-plataforma="PS5">
+            <div class="card" data-precio="249.90" data-plataforma="PS5" data-categoria="deportes">
+                <button class="favorito">❤️</button>
                 <img src="J2.png" alt="FIFA">
                 <h3>EA Sports FC 24</h3>
+                <p class="extra">PS5 | Deportes | 2023</p>
+                <div class="estrellas">⭐⭐⭐⭐☆</div>
                 <p class="precio">S/249.90</p>
-                <button>Agregar al carrito</button>
+                <button onclick="agregarAlCarrito('EA Sports FC 24',249.90)">Agregar al carrito</button>
+                <button onclick="abrirModal('EA Sports FC 24')">Ver más</button>
             </div>
 
             <!-- JUEGO 3 -->
-            <div class="card" data-precio="299.90" data-plataforma="Nintendo">
+            <div class="card" data-precio="299.90" data-plataforma="Nintendo" data-categoria="aventura">
                 <span class="oferta">-15%</span>
+                <button class="favorito">❤️</button>
                 <img src="J3.png" alt="Zelda">
                 <h3>Zelda: Tears of the Kingdom</h3>
+                <p class="extra">Nintendo | Aventura | 2023</p>
+                <div class="estrellas">⭐⭐⭐⭐⭐</div>
                 <p class="precio">S/299.90</p>
-                <button>Agregar al carrito</button>
+                <button onclick="agregarAlCarrito('Zelda: Tears of the Kingdom',299.90)">Agregar al carrito</button>
+                <button onclick="abrirModal('Zelda: Tears of the Kingdom')">Ver más</button>
             </div>
 
             <!-- JUEGO 4 -->
-            <div class="card" data-precio="269.90" data-plataforma="Xbox">
+            <div class="card" data-precio="269.90" data-plataforma="Xbox" data-categoria="accion">
+                <button class="favorito">❤️</button>
                 <img src="J4.png" alt="COD">
                 <h3>Call of Duty MW3</h3>
+                <p class="extra">Xbox | Acción | 2011</p>
+                <div class="estrellas">⭐⭐⭐☆☆</div>
                 <p class="precio">S/269.90</p>
-                <button>Agregar al carrito</button>
+                <button onclick="agregarAlCarrito('Call of Duty MW3',269.90)">Agregar al carrito</button>
+                <button onclick="abrirModal('Call of Duty MW3')">Ver más</button>
             </div>
         </div>
         <p id="mensaje-vacio" style="display:none; text-align:center; margin-top:20px;">
