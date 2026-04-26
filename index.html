@@ -3,9 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <title>GameHub - Tienda Gamer</title>
+
+    <!-- FUENTES -->
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
     <link rel="stylesheet" href="estilos.css">
-    <link rel="shortcut icon" href="imagenes/Logo.png" type="image/x-icon">
 </head>
+
 <body>
 
 <header>
@@ -15,152 +19,176 @@
         <ul>
             <li>Inicio</li>
             <li>Consolas</li>
-            <li>Juegos <a href="juegos.html"></a></li>
+            <li>Juegos</li>
             <li>Accesorios</li>
         </ul>
     </nav>
-
-    <div class="auth">
-        <button onclick="mostrarLogin()">Iniciar Sesión</button>
-        <button onclick="mostrarRegistro()">Registrarse</button>
-    </div>
 </header>
 
-<!-- LOGIN -->
-<div id="loginForm" class="modal">
-    <div class="modal-content">
-        <h2>Iniciar Sesión</h2>
-        <input type="text" id="loginUser" placeholder="Usuario">
-        <input type="password" id="loginPass" placeholder="Contraseña">
-        <button onclick="iniciarSesion()">Ingresar</button>
-        <button onclick="cerrarModal()">Cerrar</button>
-    </div>
-</div>
-
-<!-- REGISTRO -->
-<div id="registroForm" class="modal">
-    <div class="modal-content">
-        <h2>Registrarse</h2>
-        <input type="text" id="regUser" placeholder="Usuario">
-        <input type="password" id="regPass" placeholder="Contraseña">
-        <button onclick="registrar()">Registrar</button>
-        <button onclick="cerrarModal()">Cerrar</button>
-    </div>
-</div>
-
-<section class="banner"></section>
+<!-- BANNER -->
+<section class="banner">
+    <img src="imagenes/Banner.png" alt="Banner">
+</section>
 
 <section class="section">
-    <center><h1>Bienvenido a GameHub</h1></center>
 
-    <!-- CATEGORÍAS -->
-    <h2>Categorías</h2>
+<h1>Bienvenido a GameHub</h1>
 
-    <div class="contenedor-cinta">
-        <button class="flecha izquierda" onclick="scrollCategorias(-1)">&#10094;</button>
+<!-- CATEGORÍAS -->
+<h2>Categorías</h2>
 
-        <div class="cinta-categorias" id="cinta">
+<div class="contenedor-cinta">
+    <button class="flecha izquierda" onclick="scrollSeccion('categorias', -1)">&#10094;</button>
 
-            <div class="card">
-                <img src="imagenes/pcgaming.jpg">
-                <h3>PC Gaming</h3>
-            </div>
-
-            <div class="card">
-                <img src="imagenes/consolas.jpg">
-                <h3>Consolas</h3>
-            </div>
-
-            <div class="card">
-                <img src="imagenes/perifericos.jpg">
-                <h3>Perifericos</h3>
-            </div>
-
-            <div class="card">
-                <img src="imagenes/sillasgamer.png">
-                <h3>Sillas Gamer</h3>
-            </div>
-
-             <div class="card">
-                <img src="imagenes/coleccionables.jpg">
-                <h3>Coleccionables</h3>
-            </div>
-
-            <div class="card">
-                <img src="imagenes/Accesorios.webp">
-                <h3>Accesorios</h3>
-            </div>
-
-            <div class="card">
-                <img src="imagenes/Streaming.webp">
-                <h3>Streaming</h3>
-            </div>
-
-        </div>
-
-        <button class="flecha derecha" onclick="scrollCategorias(1)">&#10095;</button>
+    <div class="cinta" id="categorias">
+        <div class="card"><img src="imagenes/pcgaming.jpg"><h3>PC Gaming</h3></div>
+        <div class="card"><img src="imagenes/consolas.jpg"><h3>Consolas</h3></div>
+        <div class="card"><img src="imagenes/perifericos.jpg"><h3>Periféricos</h3></div>
+        <div class="card"><img src="imagenes/sillasgamer.png"><h3>Sillas Gamer</h3></div>
+        <div class="card"><img src="imagenes/coleccionables.jpg"><h3>Coleccionables</h3></div>
+        <div class="card"><img src="imagenes/Accesorios.webp"><h3>Accesorios</h3></div>
     </div>
 
-    <!-- NOVEDADES -->
-    <h2>Novedades</h2>
-    <div class="productos">
-
-    <div class="producto-card">
-        <img src="imagenes/mousergb.png">
-        <div class="info">
-            <p class="nombre">Mouse RGB Gamer Profesional</p>
-            <p class="precio">S/ 79.90</p>
-        </div>
-    </div>
-
-    <div class="producto-card">
-        <img src="imagenes/monitorgamer.webp">
-        <div class="info">
-            <p class="nombre">Monitor Gamer 144Hz Full HD</p>
-            <p class="precio">S/ 279.90</p>
-        </div>
-    </div>
-
+    <button class="flecha derecha" onclick="scrollSeccion('categorias', 1)">&#10095;</button>
 </div>
 
-    <!-- MÁS VENDIDOS -->
-    <h2>Más Vendidos</h2>
-    <div class="productos">
-        <div class="card">
-            <img src="imagenes/tecladogamer.webp">
-            <h3>Teclado Mecánico</h3>
-            <button onclick="agregarCarrito('Teclado Mecánico')">Comprar</button>
+<!-- NOVEDADES -->
+<h2>Novedades</h2>
+
+<div class="contenedor-cinta">
+    <button class="flecha izquierda" onclick="scrollSeccion('novedades', -1)">&#10094;</button>
+
+    <div class="cinta" id="novedades">
+        <div class="producto-card">
+            <img src="imagenes/mousergb.png">
+            <div class="info">
+                <p class="nombre">Mouse RGB Gamer</p>
+                <p class="precio">S/ 79.90</p>
+            </div>
         </div>
 
-        <div class="card">
+        <div class="producto-card">
+            <img src="imagenes/monitorgamer.webp">
+            <div class="info">
+                <p class="nombre">Monitor Gamer 144Hz</p>
+                <p class="precio">S/ 279.90</p>
+            </div>
+        </div>
+
+        <div class="producto-card">
             <img src="imagenes/audifonosgamer.webp">
-            <h3>Audífonos Gamer</h3>
-            <button onclick="agregarCarrito('Audífonos Gamer')">Comprar</button>
+            <div class="info">
+                <p class="nombre">Audífonos Gamer</p>
+                <p class="precio">S/ 149.90</p>
+            </div>
+        </div>
+
+        <div class="producto-card">
+            <img src="imagenes/tecladogamer.webp">
+            <div class="info">
+                <p class="nombre">Teclado Mecánico</p>
+                <p class="precio">S/ 199.90</p>
+            </div>
         </div>
     </div>
 
-    <!-- PROMOCIONES -->
-    <h2>Promociones</h2>
-    <div class="productos">
-        <div class="card">
+    <button class="flecha derecha" onclick="scrollSeccion('novedades', 1)">&#10095;</button>
+</div>
+
+<!-- MÁS VENDIDOS -->
+<h2>Más Vendidos</h2>
+
+<div class="contenedor-cinta">
+    <button class="flecha izquierda" onclick="scrollSeccion('masvendidos', -1)">&#10094;</button>
+
+    <div class="cinta" id="masvendidos">
+        <div class="producto-card">
+            <img src="imagenes/tecladogamer.webp">
+            <div class="info">
+                <p class="nombre">Teclado Mecánico</p>
+                <p class="precio">S/ 199.90</p>
+            </div>
+        </div>
+
+        <div class="producto-card">
+            <img src="imagenes/audifonosgamer.webp">
+            <div class="info">
+                <p class="nombre">Audífonos Gamer</p>
+                <p class="precio">S/ 149.90</p>
+            </div>
+        </div>
+
+        <div class="producto-card">
+            <img src="imagenes/mousergb.png">
+            <div class="info">
+                <p class="nombre">Mouse Logitech</p>
+                <p class="precio">S/ 89.90</p>
+            </div>
+        </div>
+    </div>
+
+    <button class="flecha derecha" onclick="scrollSeccion('masvendidos', 1)">&#10095;</button>
+</div>
+
+<!-- PROMOCIONES -->
+<h2>Promociones</h2>
+
+<div class="contenedor-cinta">
+    <button class="flecha izquierda" onclick="scrollSeccion('promociones', -1)">&#10094;</button>
+
+    <div class="cinta" id="promociones">
+        <div class="producto-card">
             <img src="imagenes/combogamer.webp">
-            <h3>Combo Gamer</h3>
-            <p class="precio">S/ 299.90</p>
-            <button onclick="agregarCarrito('Combo Gamer')">Comprar</button>
+            <div class="info">
+                <p class="nombre">Combo Gamer</p>
+                <p class="precio">S/ 299.90</p>
+            </div>
         </div>
 
-        <div class="card">
+        <div class="producto-card">
             <img src="imagenes/sillagamer.jpg">
-            <h3>Silla Gamer</h3>
-            <p class="precio">S/ 499.90</p>
-            <button onclick="agregarCarrito('Silla Gamer')">Comprar</button>
+            <div class="info">
+                <p class="nombre">Silla Gamer</p>
+                <p class="precio">S/ 499.90</p>
+            </div>
+        </div>
+
+        <div class="producto-card">
+            <img src="imagenes/monitorgamer.webp">
+            <div class="info">
+                <p class="nombre">Monitor Oferta</p>
+                <p class="precio">S/ 259.90</p>
+            </div>
         </div>
     </div>
+
+    <button class="flecha derecha" onclick="scrollSeccion('promociones', 1)">&#10095;</button>
+</div>
 
 </section>
 
-<footer>
-    <p>© 2026 GameHub</p>
+<footer class="footer">
+    <div class="footer-container">
+        <div>
+            <h3>CONTACTO</h3>
+            <p>960984854</p>
+            <p>Lun - Vie: 8:30 - 19:00</p>
+        </div>
+
+        <div>
+            <h3>INFORMACIÓN</h3>
+            <p>Nosotros</p>
+            <p>Tiendas</p>
+        </div>
+
+        <div>
+            <h3>SUSCRÍBETE</h3>
+            <input type="email" placeholder="Tu email">
+            <button>Ir</button>
+        </div>
+    </div>
+
+    <p class="copy">© 2026 GameHub</p>
 </footer>
 
 <script src="funciones.js"></script>
