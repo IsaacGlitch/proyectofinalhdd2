@@ -1,13 +1,16 @@
 body {
     margin: 0;
-    font-family: Arial, sans-serif;
+    font-family: 'Poppins', sans-serif;
     background-color: #0f0f0f;
     color: white;
 }
 
-/* HEADER */
+h1, h2, h3, .logo {
+    font-family: 'Orbitron', sans-serif;
+}
+
 header {
-    background: black;
+    background: #000;
     padding: 15px 40px;
     display: flex;
     justify-content: space-between;
@@ -15,239 +18,150 @@ header {
 }
 
 .logo {
-    font-size: 24px;
+    font-size: 28px;
     color: #00ffc3;
 }
 
 nav ul {
-    list-style: none;
     display: flex;
-    gap: 20px;
+    gap: 30px;
+    list-style: none;
 }
 
-nav ul li:hover {
-    color: #00ffc3;
+nav ul li {
+    position: relative;
     cursor: pointer;
 }
 
-/* AUTH */
-.auth {
-    display: flex;
-    gap: 10px;
-}
-
-.auth button {
-    background: transparent;
-    border: 1px solid #00ffc3;
-    color: #00ffc3;
-    padding: 5px 10px;
-}
-
-.auth button:hover {
+nav ul li::after {
+    content: "";
+    width: 0%;
+    height: 2px;
     background: #00ffc3;
-    color: black;
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    transition: 0.3s;
+}
+
+nav ul li:hover::after {
+    width: 100%;
 }
 
 /* BANNER */
-.banner {
-    height: 800px;
+.banner img {
     width: 100%;
-    background: url('imagenes/Banner.png') center/cover;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    height: auto;
 }
 
-/* SECCIÓN */
-.section {
-    padding: 30px;
-}
-
-/* PRODUCTOS */
-.productos {
-    display: flex;
-    gap: 20px;
-    justify-content: center;
-    flex-wrap: wrap;
-}
-
-/* CARD */
-.card {
-    background: #1a1a1a;
-    padding: 15px;
-    border-radius: 10px;
-    text-align: center;
-    transition: transform 0.3s, box-shadow 0.3s;
-}
-
-.card img {
-    width: 100%;
-    height: 180px;
-    object-fit: cover;
-    border-radius: 10px;
-}
-
-.card:hover {
-    transform: scale(1.05);
-    box-shadow: 0 0 15px #00ffc3;
-}
-
-.card.seleccionado {
-    border: 2px solid #00ffc3;
-}
-
-.precio {
-    color: #00ffc3;
-    font-weight: bold;
-}
-
-/* BOTÓN GENERAL */
-button {
-    background: #00ffc3;
-    border: none;
-    padding: 10px;
-    margin-top: 10px;
-    cursor: pointer;
-}
-
-button:hover {
-    background: #00cfa0;
-}
-
-/* FOOTER */
-footer {
-    background: black;
-    text-align: center;
-    padding: 20px;
-}
-
-/* MODALES */
-.modal {
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0,0,0,0.8);
-    justify-content: center;
-    align-items: center;
-}
-
-.modal-content {
-    background: #1a1a1a;
-    padding: 20px;
-    border-radius: 10px;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-}
-
-.modal-content input {
-    padding: 10px;
-    border: none;
-    border-radius: 5px;
-}
-
-/* ========================= */
-/* 🎮 CINTA CON FLECHAS */
-/* ========================= */
-
+/* CONTENEDOR */
 .contenedor-cinta {
     position: relative;
-    display: flex;
-    align-items: center;
+    width: 70%;
+    margin: auto;
+    overflow: hidden;
 }
 
-/* Cinta (sin scroll visible) */
-.cinta-categorias {
+/* CINTA */
+.cinta {
     display: flex;
     gap: 20px;
-    overflow: hidden;
-    padding: 20px;
+    overflow-x: auto;
     scroll-behavior: smooth;
+    padding: 20px;
+    scrollbar-width: none;
 }
 
-/* Cards dentro de la cinta */
-.cinta-categorias .card {
-    min-width: 200px;
-    flex: 0 0 auto;
+.cinta::-webkit-scrollbar {
+    display: none;
 }
 
-/* Flechas */
+/* FLECHAS */
 .flecha {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
     background: rgba(0,0,0,0.6);
-    color: white;
     border: none;
+    color: white;
     font-size: 30px;
     cursor: pointer;
     padding: 10px;
     border-radius: 50%;
-    z-index: 10;
-    transition: 0.3s;
 }
+
+.izquierda { left: 10px; }
+.derecha { right: 10px; }
 
 .flecha:hover {
-    background: rgba(0,0,0,0.9);
+    background: #00ffc3;
+    color: black;
 }
 
-.izquierda {
-    left: 10px;
-}
-
-.derecha {
-    right: 10px;
-}
-
-/* CONTENEDOR PRODUCTOS */
-.productos {
-    display: flex;
-    gap: 30px;
-    justify-content: center;
-    flex-wrap: wrap;
-}
-
-/* CARD PRODUCTO */
-.producto-card {
+/* CARDS */
+.card {
+    min-width: 220px;
     background: #1a1a1a;
     border-radius: 10px;
-    overflow: hidden;
-    width: 220px;
+    padding: 10px;
+}
+
+.card img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+}
+
+/* PRODUCTOS */
+.producto-card {
+    min-width: 220px;
+    background: #141414;
+    border-radius: 12px;
     transition: 0.3s;
 }
 
 .producto-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 0 15px #00ffc3;
+    transform: translateY(-8px);
+    box-shadow: 0 0 20px #00ffc3;
 }
 
-/* IMAGEN */
 .producto-card img {
     width: 100%;
     height: 180px;
-    object-fit: contain; /* 👈 clave para estilo tipo tienda */
-    background: #111;
+    object-fit: contain;
+    background: #0d0d0d;
 }
 
-/* INFO */
 .info {
     padding: 10px;
-    text-align: left;
 }
 
-/* NOMBRE */
 .nombre {
-    font-size: 14px;
-    margin: 5px 0;
     color: #ccc;
 }
 
-/* PRECIO */
 .precio {
-    font-size: 18px;
-    font-weight: bold;
     color: #00ffc3;
+    font-weight: bold;
+}
+
+/* FOOTER */
+.footer {
+    background: #000;
+    padding: 40px;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.footer h3 {
+    color: #00ffc3;
+}
+
+.copy {
+    text-align: center;
+    margin-top: 20px;
 }
