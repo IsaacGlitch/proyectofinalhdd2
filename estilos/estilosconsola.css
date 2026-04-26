@@ -11,7 +11,7 @@ body {
         "carousel carousel"
         "filter consolas";
     gap: 40px;
-    padding: 40px;
+    padding: 40px;  
     max-width: 1400px;
     margin: auto;
 }
@@ -178,12 +178,32 @@ body {
     gap: 20px;
 }
 
+.paginacion {
+    grid-column: 1 / -1;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.paginacion button {
+    padding: 10px 15px;
+    margin: 5px;
+    background: #00ffc3;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.paginacion button:disabled {
+    background: #555;
+    cursor: not-allowed;
+}
 .card {
     background: #111;
     border-radius: 10px;
     overflow: hidden;
     text-align: center;
     transition: 0.3s;
+    color: white;
 }
 
 .card img {
@@ -202,7 +222,7 @@ body {
 }
 
 .card p {
-    color: #aaa;
+    color: #ffffff;
 }
 
 .btn {
