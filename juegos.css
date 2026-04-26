@@ -13,6 +13,11 @@ h2,
 h3 {
     font-family: 'Orbitron', sans-serif;
     letter-spacing: 1px;
+    color: #ffffff;
+}
+
+p{
+    color: #ffffff;
 }
 
 /* TARJETAS DE JUEGOS */
@@ -35,6 +40,24 @@ button {
     padding: 10px;
     border-radius: 8px;
     cursor: pointer;
+}
+
+/* =========================
+   BANNER PRINCIPAL
+========================= */
+.carousel {
+    height: 500px;
+    overflow: hidden;
+}
+
+.carousel-item img {
+    height: 500px;
+    width: 100%;
+    object-position: center;
+}
+
+.carousel-item {
+    position: relative;
 }
 
 /* =========================
@@ -63,6 +86,13 @@ button {
     background-color: #020617;
     padding: 15px;
     border-radius: 12px;
+    align-items: center;
+}
+
+.filtros > * {
+    height: 40px;
+    margin: 0;
+    box-sizing: border-box;
 }
 
 /* BUSCADOR */
@@ -87,6 +117,10 @@ button {
     box-shadow: 0 0 0 2px #22c55e;
 }
 
+#buscador::placeholder {
+    color: #ffffff;
+}
+
 /* =========================
    CUSTOM SELECT
 ========================= */
@@ -101,7 +135,7 @@ button {
 .selected {
     background-color: #1e293b;
     height: 40px;
-    padding: 10px 15px;
+    padding: 0px 15px;
     border-radius: 20px;
     cursor: pointer;
     color: white;
@@ -172,13 +206,22 @@ button {
 }
 
 #reset-filtros {
+    height: 40px;
     background-color: #ef4444;
     border: none;
-    padding: 10px 15px;
+    padding: 0px 15px;
+    margin: 0;
     border-radius: 20px;
     color: white;
     cursor: pointer;
     font-family: 'Poppins', sans-serif;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    align-self: center;
+    line-height: 1;
+    vertical-align: middle;
 }
 
 #reset-filtros:hover {
