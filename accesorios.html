@@ -110,5 +110,29 @@
             </article>
         </section>
     </main>
+
+    <!-- MODAL REGISTRO -->
+<div id="modalRegistro" class="modal">
+    <div class="modal-contenido">
+        <span class="cerrar" onclick="cerrarRegistro()">&times;</span>
+        <h2>Registro 🎮</h2>
+        <input type="text" id="nuevoUsuario" placeholder="Usuario">
+        <input type="password" id="nuevaPassword" placeholder="Contraseña">
+        <button onclick="registrarUsuario()">Registrarse</button>
+    </div>
+</div>
+
+<!-- MODAL LOGIN -->
+<div id="modalLogin" class="modal">
+    <div class="modal-contenido">
+        <span class="cerrar" onclick="cerrarLogin()">&times;</span>
+        <h2>Iniciar Sesión 🎮</h2>
+        <input type="text" id="usuario" placeholder="Usuario">
+        <input type="password" id="password" placeholder="Contraseña">
+        <button onclick="iniciarSesion()">Entrar</button>
+    </div>
+</div>
+
+<script src="funciones.js"></script> 
 </body>
 </html>

@@ -34,6 +34,17 @@
     <p>© 2026 GameHub</p>
 </footer>
 
+<!-- MODAL REGISTRO -->
+<div id="modalRegistro" class="modal">
+    <div class="modal-contenido">
+        <span class="cerrar" onclick="cerrarRegistro()">&times;</span>
+        <h2>Registro 🎮</h2>
+        <input type="text" id="nuevoUsuario" placeholder="Usuario">
+        <input type="password" id="nuevaPassword" placeholder="Contraseña">
+        <button onclick="registrarUsuario()">Registrarse</button>
+    </div>
+</div>
+
 <!-- MODAL LOGIN -->
 <div id="modalLogin" class="modal">
     <div class="modal-contenido">
@@ -45,6 +56,6 @@
     </div>
 </div>
 
-<script src="funciones.js"></script>
+<script src="funciones.js"></script> 
 </body>
 </html>
