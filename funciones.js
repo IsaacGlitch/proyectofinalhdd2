@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 function agregarCarrito(producto) {
     alert(producto + " agregado al carrito 🛒");
 }
@@ -20,10 +19,6 @@ document.querySelectorAll(".favorito").forEach(btn => {
     });
 
 });
-=======
-function agregarCarrito(producto) {
-    alert(producto + " agregado al carrito 🛒");
-}
 
 /* LOGIN */
 function abrirLogin() {
@@ -68,4 +63,3 @@ function iniciarSesion() {
     alert("Bienvenido " + user + " 🎮");
     cerrarLogin();
 }
->>>>>>> origin/main
