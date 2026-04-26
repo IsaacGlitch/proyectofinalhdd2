@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="estilos/estilosconsola.css">
+
+</head>
+
+<body>
+    <div class="container">
+        <div class="carousel">
+            <div class="carousel-track">
+                <div class="carousel-slide">
+                    <img src="https://picsum.photos/id/1015/800/400" alt="Imagen 1">
+                    <div class="caption">Paisaje Natural</div>
+                </div>
+                <div class="carousel-slide">
+                    <img src="https://picsum.photos/id/1016/800/400" alt="Imagen 2">
+                    <div class="caption">Montañas</div>
+                </div>
+                <div class="carousel-slide">
+                    <img src="https://picsum.photos/id/1018/800/400" alt="Imagen 3">
+                    <div class="caption">Bosque</div>
+                </div>
+            </div>
+
+            <button class="carousel-btn prev">&#10094;</button>
+            <button class="carousel-btn next">&#10095;</button>
+
+            <div class="carousel-dots">
+                <span class="dot active"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+            </div>
+        </div>
+        <aside class="filter-container">
+            <div class="filter-title">🎮 Filtrar por Consola</div>
+            <label class="filter-option">
+                <input type="checkbox" name="console" value="PlayStation 5">
+                <span class="custom-checkbox"></span>
+                <span class="console-icon playstation">🎮</span>
+                <span class="console-name">PlayStation 5</span>
+            </label>
+            <label class="filter-option">
+                <input type="checkbox" name="console" value="PlayStation 4">
+                <span class="custom-checkbox"></span>
+                <span class="console-icon playstation">🎮</span>
+                <span class="console-name">PlayStation 4</span>
+            </label>
+            <label class="filter-option">
+                <input type="checkbox" name="console" value="Xbox Series X/S">
+                <span class="custom-checkbox"></span>
+                <span class="console-icon xbox">🎮</span>
+                <span class="console-name">Xbox Series X/S</span>
+            </label>
+            <label class="filter-option">
+                <input type="checkbox" name="console" value="Xbox One">
+                <span class="custom-checkbox"></span>
+                <span class="console-icon xbox">🎮</span>
+                <span class="console-name">Xbox One</span>
+            </label>
+            <label class="filter-option">
+                <input type="checkbox" name="console" value="Nintendo Switch">
+                <span class="custom-checkbox"></span>
+                <span class="console-icon nintendo">🎮</span>
+                <span class="console-name">Nintendo Switch</span>
+            </label>
+            <div class="top-bar">
+                <div class="top-left">
+                    <span class="resultados">Filtra y organiza las consolas</span>
+                </div>
+                <div class="top-right">
+                    <div class="control">
+                        <label>Ordenar por</label>
+                        <select id="ordenar">
+                            <option value="default">Recomendados</option>
+                            <option value="recientes">Más recientes</option>
+                        </select>
+                    </div>
+                    <div class="control">
+                        <label>Mostrar</label>
+                        <select id="mostrar">
+                            <option value="6">6</option>
+                            <option value="12">12</option>
+                            <option value="24">24</option>
+                        </select>
+                    </div>
+                </div>
+            </div> 
+            <button class="apply-btn">Aplicar Filtro</button>
+        </aside>
+
+        <br>
+    <div class="consolas-div">
+
+
+        
+        <div class="card" data-console="PlayStation 5">
+            <img src="https://picsum.photos/id/1/300/200" alt="Producto">
+            <div class="card-content">
+                <h3>PlayStation 5</h3>
+                <p>Edición Estándar con lector de discos.</p>
+                <a href="#" class="btn">Ver detalles</a>
+            </div>
+        </div>
+
+        <div class="card" data-console="Xbox Series X/S">
+            <img src="https://picsum.photos/id/2/300/200" alt="Producto">
+            <div class="card-content">
+                <h3>Xbox Series X</h3>
+                <p>La consola más potente de Microsoft.</p>
+                <a href="#" class="btn">Ver detalles</a>
+            </div>
+        </div>
+
+        <div class="card" data-console="Nintendo Switch">
+            <img src="https://picsum.photos/id/3/300/200" alt="Producto">
+            <div class="card-content">
+                <h3>Nintendo Switch</h3>
+                <p>Modelo OLED con pantalla de 7 pulgadas.</p>
+                <a href="#" class="btn">Ver detalles</a>
+            </div>
+        </div>
+
+        <div class="card" data-console="PlayStation 4">
+            <img src="https://picsum.photos/id/1/300/200" alt="Producto">
+            <div class="card-content">
+                <h3>PlayStation 4</h3>
+                <p>Edición Estándar con lector de discos.</p>
+                <a href="#" class="btn">Ver detalles</a>
+            </div>
+        </div>
+
+        <div class="card" data-console="Xbox One">
+            <img src="https://picsum.photos/id/1/300/200" alt="Producto">
+            <div class="card-content">
+                <h3>Xbox One</h3>
+                <p>Edición Estándar con lector de discos.</p>
+                <a href="#" class="btn">Ver detalles</a>
+            </div>
+        </div>
+
+        </div>
+    </div>
+    </div>
+    </div>
+
+
+
+
+    <script>
+        const track = document.querySelector('.carousel-track');
+        const slides = Array.from(track.children);
+        const nextButton = document.querySelector('.next');
+        const prevButton = document.querySelector('.prev');
+        const dotsNav = document.querySelector('.carousel-dots');
+        const dots = Array.from(dotsNav.children);
+
+        let currentIndex = 0;
+
+        function updateCarousel(index) {
+            track.style.transform = 'translateX(-' + index * 100 + '%)';
+            dots.forEach(dot => dot.classList.remove('active'));
+            dots[index].classList.add('active');
+            currentIndex = index;
+        }
+
+        nextButton.addEventListener('click', () => {
+            const nextIndex = (currentIndex + 1) % slides.length;
+            updateCarousel(nextIndex);
+        });
+
+        prevButton.addEventListener('click', () => {
+            const prevIndex = (currentIndex - 1 + slides.length) % slides.length;
+            updateCarousel(prevIndex);
+        });
+
+        dots.forEach((dot, index) => {
+            dot.addEventListener('click', () => {
+                updateCarousel(index);
+            });
+        });
+
+        setInterval(() => {
+            const nextIndex = (currentIndex + 1) % slides.length;
+            updateCarousel(nextIndex);
+        }, 5000);
+
+
+    </script>
+    <script>
+        const checkboxes = document.querySelectorAll('input[name="console"]');
+        const cards = document.querySelectorAll('.card');
+
+        checkboxes.forEach(cb => {
+            cb.addEventListener('change', filtrar);
+        });
+
+        function filtrar() {
+            const selected = Array.from(checkboxes)
+                .filter(cb => cb.checked)
+                .map(cb => cb.value);
+
+            cards.forEach(card => {
+                const tipo = card.dataset.console;
+
+                if (selected.length === 0 || selected.includes(tipo)) {
+                    card.style.display = 'block';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
+    </script>
+</body>
+
+</html>
