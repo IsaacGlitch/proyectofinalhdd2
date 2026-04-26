@@ -1,4 +1,43 @@
 /* =========================
+   FUENTE DE TEXTOS
+========================= */
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #0f172a;
+    color: #ffffff;
+}
+
+/* TÍTULOS */
+h1,
+h2,
+h3 {
+    font-family: 'Orbitron', sans-serif;
+    letter-spacing: 1px;
+}
+
+/* TARJETAS DE JUEGOS */
+.card h3 {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 18px;
+}
+
+.card p {
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+}
+
+/* BOTONES */
+button {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    background-color: #22c55e;
+    border: none;
+    padding: 10px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+/* =========================
    CONTENEDOR PRINCIPAL
 ========================= */
 .contenedor-juegos {
@@ -18,19 +57,132 @@
 ========================= */
 .filtros {
     display: flex;
-    justify-content: center;
-    gap: 15px;
-    margin-bottom: 30px;
     flex-wrap: wrap;
+    gap: 12px;
+    margin-bottom: 25px;
+    background-color: #020617;
+    padding: 15px;
+    border-radius: 12px;
 }
 
-.filtros input,
-.filtros select {
-    padding: 10px;
-    border-radius: 5px;
+/* BUSCADOR */
+#buscador {
+    flex: 1;
+    min-width: 200px;
+    height: 40px;
+    padding: 10px 15px;
+    border-radius: 20px;
     border: none;
+    background-color: #1e293b;
+    color: white;
+    font-family: 'Poppins', sans-serif;
     outline: none;
-    font-size: 14px;
+}
+
+#buscador:hover {
+    background-color: #334155;
+}
+
+#buscador:focus {
+    box-shadow: 0 0 0 2px #22c55e;
+}
+
+/* =========================
+   CUSTOM SELECT
+========================= */
+
+.custom-select {
+    position: relative;
+    width: 200px;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* CAJA */
+.selected {
+    background-color: #1e293b;
+    height: 40px;
+    padding: 10px 15px;
+    border-radius: 20px;
+    cursor: pointer;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: 0.3s;
+}
+
+/* HOVER */
+.selected:hover {
+    background-color: #334155;
+}
+
+/* ACTIVO */
+.custom-select.active .selected {
+    box-shadow: 0 0 0 2px #22c55e;
+}
+
+/* FLECHA */
+.selected::after {
+    content: "▼";
+    font-size: 12px;
+}
+
+/* OPCIONES */
+.options {
+    position: absolute;
+    top: 110%;
+    left: 0;
+    width: 100%;
+    background-color: #020617;
+    border-radius: 10px;
+    overflow: hidden;
+    display: none;
+    z-index: 100;
+    animation: fadeIn 0.2s ease;
+}
+
+/* ITEMS */
+.options div {
+    padding: 10px;
+    cursor: pointer;
+    color: white;
+    transition: 0.2s;
+}
+
+.options div:hover {
+    background-color: #22c55e;
+}
+
+/* MOSTRAR */
+.custom-select.active .options {
+    display: block;
+}
+
+/* ANIMACIÓN */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-5px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+#reset-filtros {
+    background-color: #ef4444;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 20px;
+    color: white;
+    cursor: pointer;
+    font-family: 'Poppins', sans-serif;
+}
+
+#reset-filtros:hover {
+    background-color: #dc2626;
 }
 
 /* =========================
@@ -46,7 +198,8 @@
    TARJETAS (CARDS)
 ========================= */
 .grid-juegos .card {
-    background: #1a1a1a; /* usa tu mismo estilo */
+    background: #1a1a1a;
+    /* usa tu mismo estilo */
     padding: 15px;
     border-radius: 10px;
     text-align: center;
@@ -97,6 +250,50 @@
 
 .grid-juegos button:hover {
     background: #00cfa0;
+}
+
+/* CORAZÓN DE FAVORITO */
+.favorito {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 40px;
+    height: 40px;
+
+    border-radius: 50%;
+    border: none;
+
+    background: rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(5px);
+
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+/* icono */
+.favorito .icono {
+    font-size: 18px;
+    color: #555;
+    transition: 0.3s;
+}
+
+/* hover */
+.favorito:hover {
+    transform: scale(1.1);
+    background: #fff;
+}
+
+/* activo (like) */
+.favorito.activo .icono {
+    color: #ff3b5c;
+}
+
+/* efecto al hacer click */
+.favorito:active {
+    transform: scale(0.9);
 }
 
 /* =========================
