@@ -1,4 +1,4 @@
-# GameHub – Plataforma Web de Videojuegos
+# GameHub – Plataforma Web de Productos Gamer
 ## INTEGRANTES:
 - ALVAREZ YSMODES, CALEB ISAAC
 - GONZALES SOLORZANO, CARLOS ERNESTO
