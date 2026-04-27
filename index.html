@@ -3,58 +3,269 @@
 <head>
     <meta charset="UTF-8">
     <title>GameHub - Tienda Gamer</title>
+
+    <!-- FUENTES -->
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
     <link rel="stylesheet" href="estilos.css">
-    <link rel="shortcut icon" href="imagenes/Logo.png" type="image/x-icon">
 </head>
+
 <body>
 
 <header>
-    <div class="header-left">
-        <div class="logo">GameHub</div>
-
-        <div class="auth-buttons">
-            <button class="btn-register" onclick="abrirRegistro()">Registrarse</button>
-            <button class="btn-login" onclick="abrirLogin()">Iniciar sesión</button>
-        </div>
-    </div>
+<<<<<<< HEAD
+    <div class="logo">GameHub</div>
 
     <nav>
         <ul>
-            <li><a href="index.html">Inicio</a></li>
-            <li><a href="consola.html"></a>Consolas</li>
-            <li><a href="juegos.html">Juegos</a></li>
-            <li><a href="accesorios.html">Accesorios</a></li>
+            <li>Inicio</li>
+            <li>Consolas</li>
+            <li>Juegos</li>
+            <li>Accesorios</li>
         </ul>
     </nav>
 </header>
 
-<section class="banner"></section>
-
-<section class="section">
-    <h1 style="text-align: center;">Bienvenido a GameHub 🎮</h1>
-    <h2>Novedades</h2>
-
-    <div class="productos">
-
-        <div class="card">
-            <img src="imagenes/tecladogamer.webp" alt="Teclado Gamer">
-            <h3>Teclado Gamer</h3>
-            <p class="precio">S/ 199.90</p>
-            <button onclick="agregarCarrito('Teclado Gamer')">Comprar</button>
-        </div>
-
-        <div class="card">
-            <img src="imagenes/audifonosgamer.webp" alt="Audífonos Gamer">
-            <h3>Audífonos Gamer</h3>
-            <p class="precio">S/ 249.90</p>
-            <button onclick="agregarCarrito('Audífonos Gamer')">Comprar</button>
-        </div>
-
-    </div>
+<<<<<<< HEAD
+<!-- BANNER -->
+<section class="banner">
+    <img src="imagenes/Banner.png" alt="Banner">
 </section>
 
-<footer>
-    <p>© 2026 GameHub</p>
+<section class="section">
+
+<h1>Bienvenido a GameHub</h1>
+
+<!-- CATEGORÍAS -->
+<h2>Categorías</h2>
+
+
+<div class="contenedor-cinta">
+    <button class="flecha izquierda" onclick="scrollSeccion('categorias', -1)">&#10094;</button>
+
+    <div class="cinta" id="categorias">
+        <div class="card"><img src="imagenes/pcgaming.jpg"><h3>PC Gaming</h3></div>
+        <div class="card"><img src="imagenes/consolas.jpg"><h3>Consolas</h3></div>
+        <div class="card"><img src="imagenes/perifericos.jpg"><h3>Periféricos</h3></div>
+        <div class="card"><img src="imagenes/sillasgamer.png"><h3>Sillas Gamer</h3></div>
+        <div class="card"><img src="imagenes/coleccionables.jpg"><h3>Coleccionables</h3></div>
+        <div class="card"><img src="imagenes/Accesorios.webp"><h3>Accesorios</h3></div>
+    </div>
+
+    <button class="flecha derecha" onclick="scrollSeccion('categorias', 1)">&#10095;</button>
+</div>
+
+<!-- NOVEDADES -->
+<h2>Novedades</h2>
+
+<div class="contenedor-cinta">
+    <button class="flecha izquierda" onclick="scrollSeccion('novedades', -1)">&#10094;</button>
+
+    <div class="cinta" id="novedades">
+        <div class="producto-card">
+            <img src="imagenes/mousergb.png">
+            <div class="info">
+                <p class="nombre">Mouse Aurora RGB Gamer</p>
+                <p class="precio">S/ 79.90</p>
+            </div>
+        </div>
+
+        <div class="producto-card">
+            <img src="imagenes/monitorgamer.webp">
+            <div class="info">
+                <p class="nombre">Monitor Gamer ASUS 144Hz</p>
+                <p class="precio">S/ 679.90</p>
+            </div>
+        </div>
+
+        <div class="producto-card">
+            <img src="imagenes/audifonosgamer.webp">
+            <div class="info">
+                <p class="nombre">Audífonos Gamer Samsung</p>
+                <p class="precio">S/ 149.90</p>
+            </div>
+        </div>
+
+        <div class="producto-card">
+            <img src="imagenes/mousegamer.jpg">
+            <div class="info">
+                <p class="nombre">Mouse Gamer RGB Generico</p>
+                <p class="precio">S/ 70.00</p>
+            </div>
+        </div>
+
+        <div class="producto-card">
+            <img src="imagenes/mandogamer.webp">
+            <div class="info">
+                <p class="nombre">Mando Dualshock Sense PS5</p>
+                <p class="precio">S/ 249.00</p>
+            </div>
+        </div>
+
+        <div class="producto-card">
+            <img src="imagenes/Animiniztadc.avif">
+            <div class="info">
+                <p class="nombre">Animiniz TADC Pomni First Chapter</p>
+                <p class="precio">S/ .90</p>
+            </div>
+        </div>
+
+        <div class="producto-card">
+            <img src="imagenes/tecladogamer.webp">
+            <div class="info">
+                <p class="nombre">Teclado Mecánico Royal Kludge R75</p>
+                <p class="precio">S/ 199.90</p>
+            </div>
+        </div>
+    </div>
+
+
+    <button class="flecha derecha" onclick="scrollSeccion('novedades', 1)">&#10095;</button>
+</div>
+
+<!-- MÁS VENDIDOS -->
+<h2>Más Vendidos</h2>
+
+<div class="contenedor-cinta">
+    <button class="flecha izquierda" onclick="scrollSeccion('masvendidos', -1)">&#10094;</button>
+
+    <div class="cinta" id="masvendidos">
+        <div class="producto-card">
+            <img src="imagenes/tecladologitech.jpg">
+            <div class="info">
+                <p class="nombre">Teclado Mecánico Logitech K835 TKL</p>
+                <p class="precio">S/ 199.90</p>
+            </div>
+        </div>
+
+        <div class="producto-card">
+            <img src="imagenes/audifonoslogi.jpg">
+            <div class="info">
+                <p class="nombre">Audífonos Logitech G733 LightSpeed RGB</p>
+                <p class="precio">S/ 395.90</p>
+            </div>
+        </div>
+
+        <div class="producto-card">
+            <img src="imagenes/mousebest.jpg">
+            <div class="info">
+                <p class="nombre">Mouse gamer RGB TE-121 OG</p>
+                <p class="precio">S/ 69.90</p>
+            </div>
+        </div>
+
+        <div class="producto-card">
+            <img src="imagenes/mikepop.webp">
+            <div class="info">
+                <p class="nombre">Funko Pop Edicion Stranger Things Mike</p>
+                <p class="precio">S/ 59.90</p>
+            </div>
+        </div>
+
+        <div class="producto-card">
+            <img src="imagenes/funkobubble.jpg">
+            <div class="info">
+                <p class="nombre">Funko Pop Edicion TADC Bubble</p>
+                <p class="precio">S/ 69.90</p>
+            </div>
+        </div>
+
+        <div class="producto-card">
+            <img src="imagenes/gangleaniminiz.jpg">
+            <div class="info">
+                <p class="nombre">Animiniz Gangle Edicion Episodio de Playa</p>
+                <p class="precio">S/ 89.90</p>
+            </div>
+        </div>
+    </div>
+
+    <button class="flecha derecha" onclick="scrollSeccion('masvendidos', 1)">&#10095;</button>
+</div>
+
+<!-- PROMOCIONES -->
+<h2>Promociones</h2>
+
+<div class="contenedor-cinta">
+    <button class="flecha izquierda" onclick="scrollSeccion('promociones', -1)">&#10094;</button>
+
+    <div class="cinta" id="promociones">
+        <div class="producto-card">
+            <img src="imagenes/combogamer.webp">
+            <div class="info">
+                <p class="nombre">Combo Gamer</p>
+                <p class="precio">S/ 299.90</p>
+            </div>
+        </div>
+
+        <div class="producto-card">
+            <img src="imagenes/sillagamer.jpg">
+            <div class="info">
+                <p class="nombre">Silla Gamer</p>
+                <p class="precio">S/ 499.90</p>
+            </div>
+        </div>
+
+        <div class="producto-card">
+            <img src="imagenes/beachaniminiz.webp">
+            <div class="info">
+                <p class="nombre">Pack Animiniz TADC Episodio de Playa</p>
+                <p class="precio">S/ 299.90</p>
+            </div>
+        </div>
+        
+        <div class="producto-card">
+            <img src="imagenes/minnieani.webp">
+            <div class="info">
+                <p class="nombre">Pack Funko Pop Minnie Mouse</p>
+                <p class="precio">S/ 299.90</p>
+            </div>
+        </div>
+
+        <div class="producto-card">
+            <img src="imagenes/culturageek.jpg">
+            <div class="info">
+                <p class="nombre">Pack CUltura Geek</p>
+                <p class="precio">S/ 499.90</p>
+            </div>
+        </div>
+
+
+        <div class="producto-card">
+            <img src="imagenes/packcompu.jpg">
+            <div class="info">
+                <p class="nombre">Pack Componentes PC gamer</p>
+                <p class="precio">S/ 500.00</p>
+            </div>
+        </div>
+    </div>
+
+    <button class="flecha derecha" onclick="scrollSeccion('promociones', 1)">&#10095;</button>
+</div>
+
+</section>
+
+<footer class="footer">
+    <div class="footer-container">
+        <div>
+            <h3>CONTACTO</h3>
+            <p>960984854</p>
+            <p>Lun - Vie: 8:30 - 19:00</p>
+        </div>
+
+        <div>
+            <h3>INFORMACIÓN</h3>
+            <p>Nosotros</p>
+            <p>Tiendas</p>
+        </div>
+
+        <div>
+            <h3>SUSCRÍBETE</h3>
+            <input type="email" placeholder="Tu email">
+            <button>Ir</button>
+        </div>
+    </div>
+
+    <p class="copy">© 2026 GameHub</p>
 </footer>
 
 <!-- MODAL REGISTRO -->
