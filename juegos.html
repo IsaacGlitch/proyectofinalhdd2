@@ -1,46 +1,301 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <title>GameHub - Tienda Gamer</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&family=Poppins:wght@300;400;600&display=swap"
+        rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+
     <link rel="stylesheet" href="estilos.css">
+    <link rel="stylesheet" href="juegos.css">
     <link rel="shortcut icon" href="Logo.png" type="image/x-icon">
 </head>
+
 <body>
 
-<header>
-    <div class="header-left">
+    <!-- HEADER -->
+    <header>
         <div class="logo">GameHub</div>
-        <button class="btn-login" onclick="abrirLogin()">Iniciar sesión</button>
+
+        <div class="auth-buttons">
+            <button class="btn-register" onclick="abrirRegistro()">Registrarse</button>
+            <button class="btn-login" onclick="abrirLogin()">Iniciar sesión</button>
+        </div>
+
+        <nav>
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="consola.html">Consolas</a></li>
+                <li><a href="juegos.html">Juegos</a></li>
+                <li><a href="accesorios.html">Accesorios</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- BANNER -->
+    <div id="carouselBanner" class="carousel slide carousel-fade" data-bs-ride="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="imagenes-juegos/Banner1.png" class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-item">
+                <img src="imagenes-juegos/Banner2.png" class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-item">
+                <img src="imagenes-juegos/Banner3.png" class="d-block w-100" alt="...">
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselBanner" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselBanner" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
     </div>
 
-    <nav>
-        <ul>
-            <li>Inicio</li>
-            <li>Consolas</li>
-            <li>Juegos</li>
-            <li>Accesorios</li>
-        </ul>
-    </nav>
-</header>
+    <!-- SECCIÓN JUEGOS -->
+    <section class="contenedor-juegos">
 
-<section class="banner"></section>
+        <h2>Catálogo de Videojuegos</h2>
 
-<footer>
-    <p>© 2026 GameHub</p>
-</footer>
+        <!-- FILTROS -->
+        <div class="filtros">
+            <input type="text" id="buscador" placeholder="Buscar juego...">
 
-<!-- MODAL LOGIN -->
-<div id="modalLogin" class="modal">
-    <div class="modal-contenido">
-        <span class="cerrar" onclick="cerrarLogin()">&times;</span>
-        <h2>Iniciar Sesión 🎮</h2>
-        <input type="text" id="usuario" placeholder="Usuario">
-        <input type="password" id="password" placeholder="Contraseña">
-        <button onclick="iniciarSesion()">Entrar</button>
+            <div class="custom-select" id="filtro-ordenar">
+                <div class="selected">Ordenar por</div>
+                <div class="options">
+                    <div data-value="">Ordenar por</div>
+                    <div data-value="menor">Precio: menor a mayor</div>
+                    <div data-value="mayor">Precio: mayor a menor</div>
+                </div>
+            </div>
+
+            <div class="custom-select" id="filtro-plataforma">
+                <div class="selected">Plataforma</div>
+                <div class="options">
+                    <div data-value="">Plataforma</div>
+                    <div data-value="PS5">PS5</div>
+                    <div data-value="Xbox">Xbox</div>
+                    <div data-value="Nintendo">Nintendo</div>
+                </div>
+            </div>
+
+            <div class="custom-select" id="filtro-categoria">
+                <div class="selected">Categoría</div>
+                <div class="options">
+                    <div data-value="">Categoría</div>
+                    <div data-value="accion">Acción</div>
+                    <div data-value="aventura">Aventura</div>
+                    <div data-value="deportes">Deportes</div>
+                </div>
+            </div>
+
+            <button id="reset-filtros">Limpiar filtros</button>
+        </div>
+
+        <!-- GRID DE JUEGOS -->
+        <div class="grid-juegos" id="grid">
+
+            <!-- JUEGO 1 -->
+            <div class="card" data-precio="289.90" data-plataforma="PS5" data-categoria="aventura">
+                <img src="imagenes-juegos/J1.png" alt="Elden">
+                <h3>Elden Ring</h3>
+                <p class="extra">PS5 | Aventura | 2022</p>
+                <div class="estrellas">⭐⭐⭐⭐⭐</div>
+                <p class="precio">S/289.90</p>
+                <button class="favorito"> <span class="icono">♡</span> </button>
+                <button onclick="agregarAlCarrito('Elden Ring',289.90)">Agregar al carrito</button>
+                <button onclick="abrirModal('Elden Ring')">Ver más</button>
+            </div>
+
+            <!-- JUEGO 2 -->
+            <div class="card" data-precio="249.90" data-plataforma="PS5" data-categoria="deportes">
+                <img src="imagenes-juegos/J2.png" alt="FIFA">
+                <h3>EA Sports FC 24</h3>
+                <p class="extra">PS5 | Deportes | 2023</p>
+                <div class="estrellas">⭐⭐⭐⭐☆</div>
+                <p class="precio">S/249.90</p>
+                <button class="favorito"> <span class="icono">♡</span> </button>
+                <button onclick="agregarAlCarrito('EA Sports FC 24',249.90)">Agregar al carrito</button>
+                <button onclick="abrirModal('EA Sports FC 24')">Ver más</button>
+            </div>
+
+            <!-- JUEGO 3 -->
+            <div class="card" data-precio="299.90" data-plataforma="Nintendo" data-categoria="aventura">
+                <span class="oferta">-15%</span>
+                <img src="imagenes-juegos/J3.png" alt="Zelda">
+                <h3>Zelda: Tears of the Kingdom</h3>
+                <p class="extra">Nintendo | Aventura | 2023</p>
+                <div class="estrellas">⭐⭐⭐⭐⭐</div>
+                <p class="precio">S/299.90</p>
+                <button class="favorito"> <span class="icono">♡</span> </button>
+                <button onclick="agregarAlCarrito('Zelda: Tears of the Kingdom',299.90)">Agregar al carrito</button>
+                <button onclick="abrirModal('Zelda: Tears of the Kingdom')">Ver más</button>
+            </div>
+
+            <!-- JUEGO 4 -->
+            <div class="card" data-precio="269.90" data-plataforma="Xbox" data-categoria="accion">
+                <img src="imagenes-juegos/J4.png" alt="COD">
+                <h3>Call of Duty MW3</h3>
+                <p class="extra">Xbox | Acción | 2011</p>
+                <div class="estrellas">⭐⭐⭐☆☆</div>
+                <p class="precio">S/269.90</p>
+                <button class="favorito"> <span class="icono">♡</span> </button>
+                <button onclick="agregarAlCarrito('Call of Duty MW3',269.90)">Agregar al carrito</button>
+                <button onclick="abrirModal('Call of Duty MW3')">Ver más</button>
+            </div>
+
+            <!-- JUEGO 5 -->
+            <div class="card" data-precio="299.90" data-plataforma="PS5" data-categoria="accion">
+                <img src="imagenes-juegos/J5.png" alt="GWR">
+                <h3>God of War Ragnarök</h3>
+                <p class="extra">PS5 | Acción | 2022</p>
+                <div class="estrellas">⭐⭐⭐⭐⭐</div>
+                <p class="precio">S/299.90</p>
+                <button class="favorito"> <span class="icono">♡</span> </button>
+                <button onclick="agregarAlCarrito('God of War Ragnarök',299.90)">Agregar al carrito</button>
+                <button onclick="abrirModal('God of War Ragnarök')">Ver más</button>
+            </div>
+
+            <!-- JUEGO 6 -->
+            <div class="card" data-precio="249.90" data-plataforma="Xbox" data-categoria="accion">
+                <img src="imagenes-juegos/J6.png" alt="Halo">
+                <h3>Halo Infinite</h3>
+                <p class="extra">Xbox | Acción | 2021</p>
+                <div class="estrellas">⭐⭐⭐⭐☆</div>
+                <p class="precio">S/249.90</p>
+                <button class="favorito"> <span class="icono">♡</span> </button>
+                <button onclick="agregarAlCarrito('Halo Infinite',249.90)">Agregar al carrito</button>
+                <button onclick="abrirModal('Halo Infinite')">Ver más</button>
+            </div>
+
+            <!-- JUEGO 7 -->
+            <div class="card" data-precio="219.90" data-plataforma="Nintendo" data-categoria="aventura">
+                <img src="imagenes-juegos/J7.png" alt="TLZ">
+                <h3>The Legend of Zelda: Breath of the Wild</h3>
+                <p class="extra">Nintendo | Aventura | 2017</p>
+                <div class="estrellas">⭐⭐⭐⭐⭐</div>
+                <p class="precio">S/219.90</p>
+                <button class="favorito"> <span class="icono">♡</span> </button>
+                <button onclick="agregarAlCarrito('The Legend of Zelda: Breath of the Wild',219.90)">Agregar al
+                    carrito</button>
+                <button onclick="abrirModal('The Legend of Zelda: Breath of the Wild')">Ver más</button>
+            </div>
+
+            <!-- JUEGO 8 -->
+            <div class="card" data-precio="199.90" data-plataforma="PS5" data-categoria="deportes">
+                <img src="imagenes-juegos/J8.png" alt="FIFA 23">
+                <h3>FIFA 23</h3>
+                <p class="extra">PS5 | Deportes | 2023</p>
+                <div class="estrellas">⭐⭐⭐⭐☆</div>
+                <p class="precio">S/199.90</p>
+                <button class="favorito"> <span class="icono">♡</span> </button>
+                <button onclick="agregarAlCarrito('FIFA 23',199.90)">Agregar al carrito</button>
+                <button onclick="abrirModal('FIFA 23')">Ver más</button>
+            </div>
+
+            <!-- JUEGO 9 -->
+            <div class="card" data-precio="279.90" data-plataforma="PS5" data-categoria="accion">
+                <img src="imagenes-juegos/J9.png" alt="SM2">
+                <h3>Marvel's Spider-Man 2</h3>
+                <p class="extra">PS5 | Acción | 2023</p>
+                <div class="estrellas">⭐⭐⭐⭐⭐</div>
+                <p class="precio">S/279.90</p>
+                <button class="favorito"> <span class="icono">♡</span> </button>
+                <button onclick="agregarAlCarrito('Marvel\'s Spider-Man 2',279.90)">Agregar al carrito</button>
+                <button onclick="abrirModal('Marvel\'s Spider-Man 2')">Ver más</button>
+            </div>
+
+            <!-- JUEGO 10 -->
+            <div class="card" data-precio="189.90" data-plataforma="Xbox" data-categoria="deportes">
+                <img src="imagenes-juegos/J10.png" alt="NBA 2K24">
+                <h3>NBA 2K24</h3>
+                <p class="extra">Xbox | Deportes | 2024</p>
+                <div class="estrellas">⭐⭐⭐⭐☆</div>
+                <p class="precio">S/189.90</p>
+                <button class="favorito"> <span class="icono">♡</span> </button>
+                <button onclick="agregarAlCarrito('NBA 2K24',189.90)">Agregar al carrito</button>
+                <button onclick="abrirModal('NBA 2K24')">Ver más</button>
+            </div>
+
+            <!-- JUEGO 11 -->
+            <div class="card" data-precio="259.90" data-plataforma="PS5" data-categoria="aventura">
+                <img src="imagenes-juegos/J11.png" alt="HFW">
+                <h3>Horizon Forbidden West</h3>
+                <p class="extra">PS5 | Aventura | 2022</p>
+                <div class="estrellas">⭐⭐⭐⭐⭐</div>
+                <p class="precio">S/259.90</p>
+                <button class="favorito"> <span class="icono">♡</span> </button>
+                <button onclick="agregarAlCarrito('Horizon Forbidden West',259.90)">Agregar al carrito</button>
+                <button onclick="abrirModal('Horizon Forbidden West')">Ver más</button>
+            </div>
+
+            <!-- JUEGO 12 -->
+            <div class="card" data-precio="229.90" data-plataforma="Nintendo" data-categoria="accion">
+                <img src="imagenes-juegos/J12.png" alt="Mario Kart 8 Deluxe">
+                <h3>Mario Kart 8 Deluxe</h3>
+                <p class="extra">Nintendo | Acción | 2017</p>
+                <div class="estrellas">⭐⭐⭐⭐⭐</div>
+                <p class="precio">S/229.90</p>
+                <button class="favorito"> <span class="icono">♡</span> </button>
+                <button onclick="agregarAlCarrito('Mario Kart 8 Deluxe',229.90)">Agregar al carrito</button>
+                <button onclick="abrirModal('Mario Kart 8 Deluxe')">Ver más</button>
+            </div>
+
+        </div>
+        <p id="mensaje-vacio" style="display:none; text-align:center; margin-top:20px;">
+            No se encontraron juegos
+        </p>
+
+        <!-- PAGINACIÓN -->
+        <div class="paginacion">
+            <button>1</button>
+            <button>2</button>
+            <button>3</button>
+        </div>
+
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>© 2026 GameHub</p>
+    </footer>
+
+    <!-- MODAL REGISTRO -->
+    <div id="modalRegistro" class="modal">
+        <div class="modal-contenido">
+            <span class="cerrar" onclick="cerrarRegistro()">&times;</span>
+            <h2>Registro 🎮</h2>
+            <input type="text" id="nuevoUsuario" placeholder="Usuario">
+            <input type="password" id="nuevaPassword" placeholder="Contraseña">
+            <button onclick="registrarUsuario()">Registrarse</button>
+        </div>
     </div>
-</div>
 
-<script src="funciones.js"></script>
+    <!-- MODAL LOGIN -->
+    <div id="modalLogin" class="modal">
+        <div class="modal-contenido">
+            <span class="cerrar" onclick="cerrarLogin()">&times;</span>
+            <h2>Iniciar Sesión 🎮</h2>
+            <input type="text" id="usuario" placeholder="Usuario">
+            <input type="password" id="password" placeholder="Contraseña">
+            <button onclick="iniciarSesion()">Entrar</button>
+        </div>
+    </div>
+
+    <!-- JS -->
+    <script src="funciones.js"></script>
+    <script src="filtros_juegos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+        crossorigin="anonymous"></script>
+
 </body>
 </html>
