@@ -124,6 +124,7 @@ function filtrar() {
         .map(c => c.value);
 
     const texto = buscador.value.toLowerCase();
+    const tipoOrden = ordenar.value;
 
     cards.forEach(card => {
 
@@ -143,6 +144,17 @@ function filtrar() {
 
     });
 
+    // 🔥 ORDENAMIENTO
+    const contenedor = document.querySelector('.consolas-div');
+    let cardsArray = Array.from(cards);
+
+    if (tipoOrden === 'recientes') {
+        cardsArray.reverse();
+    }
+
+    contenedor.innerHTML = '';
+    cardsArray.forEach(card => contenedor.appendChild(card));
+
     actualizarContador();
 }
 
@@ -156,6 +168,7 @@ function actualizarContador() {
 buscador.addEventListener('input', filtrar);
 checkboxes.forEach(c => c.addEventListener('change', filtrar));
 document.querySelector('.apply-btn').addEventListener('click', filtrar);
+ordenar.addEventListener('change', filtrar);
 
 /* ===== CARRUSEL ===== */
 const track = document.querySelector('.carousel-track');
