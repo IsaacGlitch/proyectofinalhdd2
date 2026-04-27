@@ -166,4 +166,5 @@ nav ul li:hover::after {
 .copy {
     text-align: center;
     margin-top: 20px;
-}
+    color: #555;
+}   
