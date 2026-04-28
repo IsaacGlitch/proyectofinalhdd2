@@ -1,127 +1,232 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
+
 <head>
     <meta charset="UTF-8">
-    <title>Consolas - GameHub</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
     <link rel="stylesheet" href="estilos/estilosconsola.css">
+    <link rel="shortcut icon" href="imagenes/Logo.png" type="image/x-icon">
 </head>
 
 <body>
+    <div class="container">
+        <div class="carousel">
+            <div class="carousel-track">
+                <div class="carousel-slide">
+                    <img src="https://picsum.photos/id/1015/800/400">
+                    <div class="caption">Paisaje Natural</div>
+                </div>
+                <div class="carousel-slide">
+                    <img src="https://picsum.photos/id/1016/800/400">
+                    <div class="caption">Montañas</div>
+                </div>
+                <div class="carousel-slide">
+                    <img src="https://picsum.photos/id/1018/800/400">
+                    <div class="caption">Bosque</div>
+                </div>
+            </div>
 
-<header>
-    <div class="header-left">
-        <div class="logo">GameHub</div>
+            <button class="carousel-btn prev">&#10094;</button>
+            <button class="carousel-btn next">&#10095;</button>
 
-        <div class="auth-buttons">
-            <button class="btn-register">Registrarse</button>
-            <button class="btn-login">Iniciar sesión</button>
-        </div>
-    </div>
-
-    <nav>
-        <ul>
-            <li><a href="index.html">Inicio</a></li>
-            <li><a href="consola.html">Consolas</a></li>
-            <li><a href="juegos.html">Juegos</a></li>
-            <li><a href="accesorios.html">Accesorios</a></li>
-        </ul>
-    </nav>
-</header>
-
-<div class="container">
-
-    <!-- CARRUSEL -->
-    <div class="carousel">
-        <div class="carousel-track">
-            <div class="carousel-slide"><img src="https://picsum.photos/id/1015/800/400"></div>
-            <div class="carousel-slide"><img src="https://picsum.photos/id/1016/800/400"></div>
-            <div class="carousel-slide"><img src="https://picsum.photos/id/1018/800/400"></div>
-        </div>
-
-        <button class="carousel-btn prev">❮</button>
-        <button class="carousel-btn next">❯</button>
-    </div>
-
-    <!-- FILTRO -->
-    <aside class="filter-container">
-
-        <h3>Filtrar</h3>
-
-        <input type="text" id="buscador" placeholder="Buscar...">
-
-        <label><input type="checkbox" value="PlayStation 5"> PS5</label>
-        <label><input type="checkbox" value="PlayStation 4"> PS4</label>
-        <label><input type="checkbox" value="Xbox Series X/S"> Xbox Series</label>
-        <label><input type="checkbox" value="Xbox One"> Xbox One</label>
-        <label><input type="checkbox" value="Nintendo Switch"> Switch</label>
-
-        <p id="contador">Mostrando 0 productos</p>
-
-        <button class="apply-btn">Aplicar</button>
-
-    </aside>
-
-    <!-- PRODUCTOS -->
-    <div class="consolas-div">
-
-        <div class="card" data-console="PlayStation 5">
-            <img src="https://picsum.photos/id/1/300/200">
-            <div class="card-content">
-                <h3>PlayStation 5</h3>
-                <p>Edición estándar</p>
+            <div class="carousel-dots">
+                <span class="dot active"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
             </div>
         </div>
 
-        <div class="card" data-console="Xbox Series X/S">
-            <img src="https://picsum.photos/id/2/300/200">
-            <div class="card-content">
-                <h3>Xbox Series X</h3>
-                <p>Alta potencia</p>
+        <aside class="filter-container">
+            <div class="filter-title">🎮 Filtrar por Consola</div>
+
+            <input type="text" id="buscador" placeholder="Buscar consola..."
+                style="width:100%;padding:8px;margin-bottom:10px;">
+
+            <label class="filter-option">
+                <input type="checkbox" name="console" value="PlayStation 5">
+                <span class="console-name">PlayStation 5</span>
+            </label>
+            <label class="filter-option">
+                <input type="checkbox" name="console" value="PlayStation 4">
+                <span class="console-name">PlayStation 4</span>
+            </label>
+            <label class="filter-option">
+                <input type="checkbox" name="console" value="Xbox Series X/S">
+                <span class="console-name">Xbox Series X/S</span>
+            </label>
+            <label class="filter-option">
+                <input type="checkbox" name="console" value="Xbox One">
+                <span class="console-name">Xbox One</span>
+            </label>
+            <label class="filter-option">
+                <input type="checkbox" name="console" value="Nintendo Switch">
+                <span class="console-name">Nintendo Switch</span>
+            </label>
+
+            <div class="top-bar">
+                <div class="top-left">
+                    <span id="contador">Mostrando 0 productos</span>
+                </div>
+                <div class="top-right">
+                    <div class="control">
+                        <label>Ordenar por</label>
+                        <select id="ordenar">
+    <option value="default">Recomendados</option>
+    <option value="recientes">Más recientes</option>
+    <option value="exclusivos">Solo exclusivos</option>
+    <option value="limitados">Solo limitados</option>
+</select>
+                    </div>
+                </div>
             </div>
-        </div>
 
-        <div class="card" data-console="Nintendo Switch">
-            <img src="https://picsum.photos/id/3/300/200">
-            <div class="card-content">
-                <h3>Nintendo Switch</h3>
-                <p>Modelo OLED</p>
-            </div>
-        </div>
+            <button class="apply-btn">Aplicar Filtro</button>
+        </aside>
 
-        <div class="card" data-console="PlayStation 4">
-            <img src="https://picsum.photos/id/4/300/200">
-            <div class="card-content">
-                <h3>PlayStation 4</h3>
-                <p>Clásica</p>
-            </div>
-        </div>
-
-        <div class="card" data-console="Xbox One">
-            <img src="https://picsum.photos/id/5/300/200">
-            <div class="card-content">
-                <h3>Xbox One</h3>
-                <p>Buen rendimiento</p>
-            </div>
-        </div>
-
-    </div>
-
+        <div class="consolas-div">
+            <div class="paginacion">
+    <button id="prevPage">⬅ Anterior</button>
+    <span id="pageInfo"></span>
+    <button id="nextPage">Siguiente ➡</button>
 </div>
+            <div class="card" data-console="PlayStation 5">
+                <img src="https://picsum.photos/id/1/300/200">
+                <div class="card-content">
+                    <h3>PlayStation 5</h3>
+                </div>
+            </div>
+
+            <div class="card" data-console="Xbox Series X/S">
+                <img src="https://picsum.photos/id/2/300/200">
+                <div class="card-content">
+                    <h3>Xbox Series X</h3>
+                </div>
+            </div>
+
+            <div class="card" data-console="Nintendo Switch">
+                <img src="https://picsum.photos/id/3/300/200">
+                <div class="card-content">
+                    <h3>Nintendo Switch</h3>
+                </div>
+            </div>
+
+            <div class="card" data-console="PlayStation 4">
+                <img src="https://picsum.photos/id/1/300/200">
+                <div class="card-content">
+                    <h3>PlayStation 4</h3>
+                </div>
+            </div>
+
+            <div class="card" data-console="Xbox One">
+                <img src="https://picsum.photos/id/1/300/200">
+                <div class="card-content">
+                    <h3>Xbox One</h3>
+                </div>
+            </div>
+            <div class="card" data-console="PlayStation 5">
+<span class="badge exclusivo">EXCLUSIVO</span>
+<img src="https://picsum.photos/id/11/300/200">
+<h3>PS5 Spider-Man Edition</h3>
+<p>Diseño edición especial</p>
+<a class="btn">Ver</a>
+</div>
+            <div class="card" data-console="PlayStation 5">
+<span class="badge limitada">LIMITADA</span>
+<img src="https://picsum.photos/id/12/300/200">
+<h3>PS5 God of War Edition</h3>
+<p>Edición coleccionista</p>
+<a class="btn">Ver</a>
+</div>
+
+<div class="card" data-console="PlayStation 5">
+<span class="badge exclusivo">EXCLUSIVO</span>
+<img src="https://picsum.photos/id/21/300/200">
+<h3>PS5 Final Fantasy XVI Edition</h3>
+<p>Diseño inspirado en el juego</p>
+<a class="btn">Ver</a>
+</div>
+
+<div class="card" data-console="PlayStation 5">
+<span class="badge limitada">LIMITADA</span>
+<img src="https://picsum.photos/id/22/300/200">
+<h3>PS5 Horizon Forbidden West Edition</h3>
+<p>Edición coleccionista</p>
+<a class="btn">Ver</a>
+</div>
+
+<div class="card" data-console="PlayStation 5">
+<span class="badge exclusivo">EXCLUSIVO</span>
+<img src="https://picsum.photos/id/23/300/200">
+<h3>PS5 The Last of Us Edition</h3>
+<p>Diseño post-apocalíptico</p>
+<a class="btn">Ver</a>
+</div>
+
+<div class="card" data-console="Xbox Series X/S">
+<span class="badge limitada">LIMITADA</span>
+<img src="https://picsum.photos/id/24/300/200">
+<h3>Xbox Starfield Edition</h3>
+<p>Edición espacial exclusiva</p>
+<a class="btn">Ver</a>
+</div>
+
+<div class="card" data-console="Xbox Series X/S">
+<span class="badge exclusivo">EXCLUSIVO</span>
+<img src="https://picsum.photos/id/25/300/200">
+<h3>Xbox Forza Motorsport Edition</h3>
+<p>Diseño racing</p>
+<a class="btn">Ver</a>
+</div>
+
+<div class="card" data-console="Xbox Series X/S">
+<span class="badge limitado">LIMITADA</span>
+<img src="https://picsum.photos/id/26/300/200">
+<h3>Xbox Gears of War Edition</h3>
+<p>Edición clásica fan</p>
+<a class="btn">Ver</a>
+</div>
+
+<div class="card" data-console="Nintendo Switch">
+<span class="badge exclusivo">EXCLUSIVO</span>
+<img src="https://picsum.photos/id/27/300/200">
+<h3>Switch Mario Edition</h3>
+<p>Diseño rojo clásico</p>
+<a class="btn">Ver</a>
+</div>
+
+<div class="card" data-console="Nintendo Switch">
+<span class="badge limitada">LIMITADA</span>
+<img src="https://picsum.photos/id/28/300/200">
+<h3>Switch Animal Crossing Edition</h3>
+<p>Diseño pastel exclusivo</p>
+<a class="btn">Ver</a>
+</div>
+
+<div class="card" data-console="Nintendo Switch">
+<span class="badge exclusivo">EXCLUSIVO</span>
+<img src="https://picsum.photos/id/29/300/200">
+<h3>Switch Pokémon Edition</h3>
+<p>Edición Pikachu & Eevee</p>
+<a class="btn">Ver</a>
+</div>
+
+        </div>
+    </div>
 
 <script>
 
-/* ===== VARIABLES ===== */
-const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+const checkboxes = document.querySelectorAll('input[name="console"]');
 const cards = document.querySelectorAll('.card');
 const buscador = document.getElementById('buscador');
-const contador = document.getElementById('contador');
+const ordenar = document.getElementById('ordenar');
 
-/* ===== FILTRO ===== */
+/* ===== FILTRAR + ORDENAR ===== */
 function filtrar() {
 
-    const seleccionados = Array.from(checkboxes)
-        .filter(c => c.checked)
-        .map(c => c.value);
+    const selected = Array.from(checkboxes)
+        .filter(cb => cb.checked)
+        .map(cb => cb.value);
 
     const texto = buscador.value.toLowerCase();
     const tipoOrden = ordenar.value;
@@ -131,16 +236,18 @@ function filtrar() {
         const tipo = card.dataset.console;
         const nombre = card.querySelector('h3').textContent.toLowerCase();
 
-        const coincideTipo =
-            seleccionados.length === 0 || seleccionados.includes(tipo);
+        const esExclusivo = card.querySelector('.exclusivo');
+        const esLimitado = card.querySelector('.limitada');
 
-        const coincideTexto = nombre.includes(texto);
+        let visible =
+            (selected.length === 0 || selected.includes(tipo)) &&
+            nombre.includes(texto);
 
-        if (coincideTipo && coincideTexto) {
-            card.style.display = "block";
-        } else {
-            card.style.display = "none";
-        }
+        // 🔥 NUEVO: filtros por tipo
+        if (tipoOrden === 'exclusivos' && !esExclusivo) visible = false;
+        if (tipoOrden === 'limitados' && !esLimitado) visible = false;
+
+        card.style.display = visible ? 'block' : 'none';
 
     });
 
@@ -160,44 +267,43 @@ function filtrar() {
 
 /* ===== CONTADOR ===== */
 function actualizarContador() {
-    const visibles = Array.from(cards).filter(c => c.style.display !== "none");
-    contador.textContent = "Mostrando " + visibles.length + " productos";
+    const visibles = Array.from(cards).filter(c => c.style.display !== 'none');
+    document.getElementById('contador').textContent =
+        `Mostrando ${visibles.length} productos`;
 }
 
-/* EVENTOS */
+/* ===== EVENTOS ===== */
 buscador.addEventListener('input', filtrar);
-checkboxes.forEach(c => c.addEventListener('change', filtrar));
+checkboxes.forEach(cb => cb.addEventListener('change', filtrar));
 document.querySelector('.apply-btn').addEventListener('click', filtrar);
 ordenar.addEventListener('change', filtrar);
 
+/* ===== INIT ===== */
+actualizarContador();
+
 /* ===== CARRUSEL ===== */
 const track = document.querySelector('.carousel-track');
-const slides = document.querySelectorAll('.carousel-slide');
-const next = document.querySelector('.next');
-const prev = document.querySelector('.prev');
+const slides = Array.from(track.children);
+const nextButton = document.querySelector('.next');
+const prevButton = document.querySelector('.prev');
+const dots = document.querySelectorAll('.dot');
 
-let index = 0;
+let currentIndex = 0;
 
-function moverCarrusel(i) {
-    track.style.transform = `translateX(-${i * 100}%)`;
-    index = i;
+function updateCarousel(index) {
+    track.style.transform = 'translateX(-' + index * 100 + '%)';
+    dots.forEach(dot => dot.classList.remove('active'));
+    dots[index].classList.add('active');
+    currentIndex = index;
 }
 
-next.addEventListener('click', () => {
-    moverCarrusel((index + 1) % slides.length);
+nextButton.addEventListener('click', () => {
+    updateCarousel((currentIndex + 1) % slides.length);
 });
 
-prev.addEventListener('click', () => {
-    moverCarrusel((index - 1 + slides.length) % slides.length);
+prevButton.addEventListener('click', () => {
+    updateCarousel((currentIndex - 1 + slides.length) % slides.length);
 });
-
-/* AUTO */
-setInterval(() => {
-    moverCarrusel((index + 1) % slides.length);
-}, 4000);
-
-/* INIT */
-actualizarContador();
 
 </script>
 
