@@ -3,6 +3,15 @@ body {
     background-color: #000;
     margin: 0;
 }
+button {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    background-color: #22c55e;
+    border: none;
+    padding: 10px;
+    border-radius: 8px;
+    cursor: pointer;
+}
 
 .container {
     display: grid;
@@ -36,7 +45,7 @@ body {
 
 .carousel-slide img {
     width: 100%;
-    height: 400px;
+    height: 700px;
     object-fit: cover;
 }
 

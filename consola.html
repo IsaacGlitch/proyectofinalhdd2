@@ -6,24 +6,46 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="estilos/estilosconsola.css">
+    <link rel="stylesheet" href="estilos/estilos.css">
     <link rel="shortcut icon" href="imagenes/Logo.png" type="image/x-icon">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&family=Poppins:wght@300;400;600&display=swap"
+        rel="stylesheet">
 </head>
 
 <body>
+    <header>
+        <div class="logo">GameHub</div>
+
+        <div class="auth-buttons">
+            <button class="btn-register" onclick="abrirRegistro()">Registrarse</button>
+            <button class="btn-login" onclick="abrirLogin()">Iniciar sesión</button>
+        </div>
+   
+
+    <nav>
+        <ul>
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="consola.html">Consolas</a></li>
+            <li><a href="juegos.html">Juegos</a></li>
+            <li><a href="accesorios.html">Accesorios</a></li>
+        </ul>
+    </nav>
+</header>
     <div class="container">
         <div class="carousel">
             <div class="carousel-track">
                 <div class="carousel-slide">
-                    <img src="https://picsum.photos/id/1015/800/400">
-                    <div class="caption">Paisaje Natural</div>
+                    <img src="imagenes-consola/carrusel1-consola.jpg">
+                    
                 </div>
                 <div class="carousel-slide">
-                    <img src="https://picsum.photos/id/1016/800/400">
-                    <div class="caption">Montañas</div>
+                    <img src="imagenes-consola/carrusel2-consola.png">
+                    
                 </div>
                 <div class="carousel-slide">
-                    <img src="https://picsum.photos/id/1018/800/400">
-                    <div class="caption">Bosque</div>
+                    <img src="imagenes-consola/carrusel3-consola.jpg">
+               
                 </div>
             </div>
 
@@ -72,11 +94,11 @@
                     <div class="control">
                         <label>Ordenar por</label>
                         <select id="ordenar">
-    <option value="default">Recomendados</option>
-    <option value="recientes">Más recientes</option>
-    <option value="exclusivos">Solo exclusivos</option>
-    <option value="limitados">Solo limitados</option>
-</select>
+                            <option value="default">Recomendados</option>
+                            <option value="recientes">Más recientes</option>
+                            <option value="exclusivos">Solo exclusivos</option>
+                            <option value="limitados">Solo limitados</option>
+                        </select>
                     </div>
                 </div>
             </div>
@@ -86,226 +108,227 @@
 
         <div class="consolas-div">
             <div class="paginacion">
-    <button id="prevPage">⬅ Anterior</button>
-    <span id="pageInfo"></span>
-    <button id="nextPage">Siguiente ➡</button>
-</div>
+                <button id="prevPage">⬅ Anterior</button>
+                <span id="pageInfo"></span>
+                <button id="nextPage">Siguiente ➡</button>
+            </div>
             <div class="card" data-console="PlayStation 5">
-                <img src="https://picsum.photos/id/1/300/200">
+                <img src="imagenes-consola/PlayStation5-consola.webp">
                 <div class="card-content">
                     <h3>PlayStation 5</h3>
                 </div>
             </div>
 
             <div class="card" data-console="Xbox Series X/S">
-                <img src="https://picsum.photos/id/2/300/200">
+                <img src="imagenes-consola/xboxserires-consola.webp">
                 <div class="card-content">
                     <h3>Xbox Series X</h3>
                 </div>
             </div>
 
             <div class="card" data-console="Nintendo Switch">
-                <img src="https://picsum.photos/id/3/300/200">
+                <img src="imagenes-consola/nintendo-consola.jpeg">
                 <div class="card-content">
                     <h3>Nintendo Switch</h3>
                 </div>
             </div>
 
             <div class="card" data-console="PlayStation 4">
-                <img src="https://picsum.photos/id/1/300/200">
+                <img src="imagenes-consola/play4-consola.webp">
                 <div class="card-content">
                     <h3>PlayStation 4</h3>
                 </div>
             </div>
 
             <div class="card" data-console="Xbox One">
-                <img src="https://picsum.photos/id/1/300/200">
+                <img src="imagenes-consola/xboxone-consola.webp">
                 <div class="card-content">
                     <h3>Xbox One</h3>
                 </div>
             </div>
             <div class="card" data-console="PlayStation 5">
-<span class="badge exclusivo">EXCLUSIVO</span>
-<img src="https://picsum.photos/id/11/300/200">
-<h3>PS5 Spider-Man Edition</h3>
-<p>Diseño edición especial</p>
-<a class="btn">Ver</a>
-</div>
+                <span class="badge exclusivo">EXCLUSIVO</span>
+                <img src="imagenes-consola/pla5spiderman-consola.webp">
+                <h3>PS5 Spider-Man Edition</h3>
+                <p>Diseño edición especial</p>
+                <a class="btn">Ver</a>
+            </div>
             <div class="card" data-console="PlayStation 5">
-<span class="badge limitada">LIMITADA</span>
-<img src="https://picsum.photos/id/12/300/200">
-<h3>PS5 God of War Edition</h3>
-<p>Edición coleccionista</p>
-<a class="btn">Ver</a>
-</div>
+                <span class="badge limitada">LIMITADA</span>
+                <img src="imagenes-consola/play5godofwar-consola.webp">
+                <h3>PS5 God of War Ragnarok Edition</h3>
+                <p>Edición coleccionista</p>
+                <a class="btn">Ver</a>
+            </div>
 
-<div class="card" data-console="PlayStation 5">
-<span class="badge exclusivo">EXCLUSIVO</span>
-<img src="https://picsum.photos/id/21/300/200">
-<h3>PS5 Final Fantasy XVI Edition</h3>
-<p>Diseño inspirado en el juego</p>
-<a class="btn">Ver</a>
-</div>
+            <div class="card" data-console="PlayStation 5">
+                <span class="badge exclusivo">EXCLUSIVO</span>
+                <img src="imagenes-consola/play5ff-consola.webp">
+                <h3>PS5 Final Fantasy XVI Edition</h3>
+                <p>Diseño inspirado en el juego</p>
+                <a class="btn">Ver</a>
+            </div>
 
-<div class="card" data-console="PlayStation 5">
-<span class="badge limitada">LIMITADA</span>
-<img src="https://picsum.photos/id/22/300/200">
-<h3>PS5 Horizon Forbidden West Edition</h3>
-<p>Edición coleccionista</p>
-<a class="btn">Ver</a>
-</div>
+            <div class="card" data-console="PlayStation 5">
+                <span class="badge limitada">LIMITADA</span>
+                <img src="imagenes-consola/ps5hfw-consola.jpg">
+                <h3>PS5 Horizon Forbidden West Edition</h3>
+                <p>Edición coleccionista</p>
+                <a class="btn">Ver</a>
+            </div>
 
-<div class="card" data-console="PlayStation 5">
-<span class="badge exclusivo">EXCLUSIVO</span>
-<img src="https://picsum.photos/id/23/300/200">
-<h3>PS5 The Last of Us Edition</h3>
-<p>Diseño post-apocalíptico</p>
-<a class="btn">Ver</a>
-</div>
+            <div class="card" data-console="PlayStation 5">
+                <span class="badge exclusivo">EXCLUSIVO</span>
+                <img src="imagenes-consola/ps4delasofus2-consola.jpg">
+                <h3>PS4 The Last of Us II Edition</h3>
+                <p>Diseño post-apocalíptico</p>
+                <a class="btn">Ver</a>
+            </div>
 
-<div class="card" data-console="Xbox Series X/S">
-<span class="badge limitada">LIMITADA</span>
-<img src="https://picsum.photos/id/24/300/200">
-<h3>Xbox Starfield Edition</h3>
-<p>Edición espacial exclusiva</p>
-<a class="btn">Ver</a>
-</div>
+            <div class="card" data-console="Xbox Series X/S">
+                <span class="badge limitada">LIMITADA</span>
+                <img src="imagenes-consola/xboxstar-consola.jpg">
+                <h3>Xbox Starfield Edition</h3>
+                <p>Edición espacial exclusiva</p>
+                <a class="btn">Ver</a>
+            </div>
 
-<div class="card" data-console="Xbox Series X/S">
-<span class="badge exclusivo">EXCLUSIVO</span>
-<img src="https://picsum.photos/id/25/300/200">
-<h3>Xbox Forza Motorsport Edition</h3>
-<p>Diseño racing</p>
-<a class="btn">Ver</a>
-</div>
+            <div class="card" data-console="Xbox Series X/S">
+                <span class="badge exclusivo">EXCLUSIVO</span>
+                <img src="imagenes-consola/xboxforza-consola.jpg">
+                <h3>Xbox Forza Motorsport Edition</h3>
+                <p>Diseño racing</p>
+                <a class="btn">Ver</a>
+            </div>
 
-<div class="card" data-console="Xbox Series X/S">
-<span class="badge limitado">LIMITADA</span>
-<img src="https://picsum.photos/id/26/300/200">
-<h3>Xbox Gears of War Edition</h3>
-<p>Edición clásica fan</p>
-<a class="btn">Ver</a>
-</div>
+            <div class="card" data-console="Xbox Series X/S">
+                <span class="badge limitado">LIMITADA</span>
+                <img src="imagenes-consola/xboxonegear-consola.jpg">
+                <h3>Xbox One Gears of War Edition</h3>
+                <p>Edición clásica fan</p>
+                <a class="btn">Ver</a>
+            </div>
 
-<div class="card" data-console="Nintendo Switch">
-<span class="badge exclusivo">EXCLUSIVO</span>
-<img src="https://picsum.photos/id/27/300/200">
-<h3>Switch Mario Edition</h3>
-<p>Diseño rojo clásico</p>
-<a class="btn">Ver</a>
-</div>
+            <div class="card" data-console="Nintendo Switch">
+                <span class="badge exclusivo">EXCLUSIVO</span>
+                <img src="imagenes-consola/nintendomario-consola.webp">
+                <h3>Switch Mario Edition</h3>
+                <p>Diseño rojo clásico</p>
+                <a class="btn">Ver</a>
+            </div>
 
-<div class="card" data-console="Nintendo Switch">
-<span class="badge limitada">LIMITADA</span>
-<img src="https://picsum.photos/id/28/300/200">
-<h3>Switch Animal Crossing Edition</h3>
-<p>Diseño pastel exclusivo</p>
-<a class="btn">Ver</a>
-</div>
+            <div class="card" data-console="Nintendo Switch">
+                <span class="badge limitada">LIMITADA</span>
+                <img src="imagenes-consola/nintendoanimalcrossing-consola.jpg">
+                <h3>Switch Animal Crossing Edition</h3>
+                <p>Diseño pastel exclusivo</p>
+                <a class="btn">Ver</a>
+            </div>
 
-<div class="card" data-console="Nintendo Switch">
-<span class="badge exclusivo">EXCLUSIVO</span>
-<img src="https://picsum.photos/id/29/300/200">
-<h3>Switch Pokémon Edition</h3>
-<p>Edición Pikachu & Eevee</p>
-<a class="btn">Ver</a>
-</div>
+            <div class="card" data-console="Nintendo Switch">
+                <span class="badge exclusivo">EXCLUSIVO</span>
+                <img src="imagenes-consola/nintendopokemon-consola.jpg">
+                <h3>Switch Pokémon Edition</h3>
+                <p>Edición Pikachu & Eevee</p>
+                <a class="btn">Ver</a>
+            </div>
 
         </div>
     </div>
 
-<script>
+    <script>
 
-const checkboxes = document.querySelectorAll('input[name="console"]');
-const cards = document.querySelectorAll('.card');
-const buscador = document.getElementById('buscador');
-const ordenar = document.getElementById('ordenar');
+        const checkboxes = document.querySelectorAll('input[name="console"]');
+        const cards = document.querySelectorAll('.card');
+        const buscador = document.getElementById('buscador');
+        const ordenar = document.getElementById('ordenar');
 
-/* ===== FILTRAR + ORDENAR ===== */
-function filtrar() {
+        /* ===== FILTRAR + ORDENAR ===== */
+        function filtrar() {
 
-    const selected = Array.from(checkboxes)
-        .filter(cb => cb.checked)
-        .map(cb => cb.value);
+            const selected = Array.from(checkboxes)
+                .filter(cb => cb.checked)
+                .map(cb => cb.value);
 
-    const texto = buscador.value.toLowerCase();
-    const tipoOrden = ordenar.value;
+            const texto = buscador.value.toLowerCase();
+            const tipoOrden = ordenar.value;
 
-    cards.forEach(card => {
+            cards.forEach(card => {
 
-        const tipo = card.dataset.console;
-        const nombre = card.querySelector('h3').textContent.toLowerCase();
+                const tipo = card.dataset.console;
+                const nombre = card.querySelector('h3').textContent.toLowerCase();
 
-        const esExclusivo = card.querySelector('.exclusivo');
-        const esLimitado = card.querySelector('.limitada');
+                const esExclusivo = card.querySelector('.exclusivo');
+                const esLimitado = card.querySelector('.limitada');
 
-        let visible =
-            (selected.length === 0 || selected.includes(tipo)) &&
-            nombre.includes(texto);
+                let visible =
+                    (selected.length === 0 || selected.includes(tipo)) &&
+                    nombre.includes(texto);
 
-        // 🔥 NUEVO: filtros por tipo
-        if (tipoOrden === 'exclusivos' && !esExclusivo) visible = false;
-        if (tipoOrden === 'limitados' && !esLimitado) visible = false;
+                // 🔥 NUEVO: filtros por tipo
+                if (tipoOrden === 'exclusivos' && !esExclusivo) visible = false;
+                if (tipoOrden === 'limitados' && !esLimitado) visible = false;
 
-        card.style.display = visible ? 'block' : 'none';
+                card.style.display = visible ? 'block' : 'none';
 
-    });
+            });
 
-    // 🔥 ORDENAMIENTO
-    const contenedor = document.querySelector('.consolas-div');
-    let cardsArray = Array.from(cards);
+            // 🔥 ORDENAMIENTO
+            const contenedor = document.querySelector('.consolas-div');
+            let cardsArray = Array.from(cards);
 
-    if (tipoOrden === 'recientes') {
-        cardsArray.reverse();
-    }
+            if (tipoOrden === 'recientes') {
+                cardsArray.reverse();
+            }
 
-    contenedor.innerHTML = '';
-    cardsArray.forEach(card => contenedor.appendChild(card));
+            contenedor.innerHTML = '';
+            cardsArray.forEach(card => contenedor.appendChild(card));
 
-    actualizarContador();
-}
+            actualizarContador();
+        }
 
-/* ===== CONTADOR ===== */
-function actualizarContador() {
-    const visibles = Array.from(cards).filter(c => c.style.display !== 'none');
-    document.getElementById('contador').textContent =
-        `Mostrando ${visibles.length} productos`;
-}
+        /* ===== CONTADOR ===== */
+        function actualizarContador() {
+            const visibles = Array.from(cards).filter(c => c.style.display !== 'none');
+            document.getElementById('contador').textContent =
+                `Mostrando ${visibles.length} productos`;
+        }
 
-/* ===== EVENTOS ===== */
-buscador.addEventListener('input', filtrar);
-checkboxes.forEach(cb => cb.addEventListener('change', filtrar));
-document.querySelector('.apply-btn').addEventListener('click', filtrar);
-ordenar.addEventListener('change', filtrar);
+        /* ===== EVENTOS ===== */
+        buscador.addEventListener('input', filtrar);
+        checkboxes.forEach(cb => cb.addEventListener('change', filtrar));
+        document.querySelector('.apply-btn').addEventListener('click', filtrar);
+        ordenar.addEventListener('change', filtrar);
 
-/* ===== INIT ===== */
-actualizarContador();
+        /* ===== INIT ===== */
+        actualizarContador();
 
-/* ===== CARRUSEL ===== */
-const track = document.querySelector('.carousel-track');
-const slides = Array.from(track.children);
-const nextButton = document.querySelector('.next');
-const prevButton = document.querySelector('.prev');
-const dots = document.querySelectorAll('.dot');
+        /* ===== CARRUSEL ===== */
+        const track = document.querySelector('.carousel-track');
+        const slides = Array.from(track.children);
+        const nextButton = document.querySelector('.next');
+        const prevButton = document.querySelector('.prev');
+        const dots = document.querySelectorAll('.dot');
 
-let currentIndex = 0;
+        let currentIndex = 0;
 
-function updateCarousel(index) {
-    track.style.transform = 'translateX(-' + index * 100 + '%)';
-    dots.forEach(dot => dot.classList.remove('active'));
-    dots[index].classList.add('active');
-    currentIndex = index;
-}
+        function updateCarousel(index) {
+            track.style.transform = 'translateX(-' + index * 100 + '%)';
+            dots.forEach(dot => dot.classList.remove('active'));
+            dots[index].classList.add('active');
+            currentIndex = index;
+        }
 
-nextButton.addEventListener('click', () => {
-    updateCarousel((currentIndex + 1) % slides.length);
-});
+        nextButton.addEventListener('click', () => {
+            updateCarousel((currentIndex + 1) % slides.length);
+        });
 
-prevButton.addEventListener('click', () => {
-    updateCarousel((currentIndex - 1 + slides.length) % slides.length);
-});
+        prevButton.addEventListener('click', () => {
+            updateCarousel((currentIndex - 1 + slides.length) % slides.length);
+        });
 
-</script>
+    </script>
 
 </body>
+
 </html>
