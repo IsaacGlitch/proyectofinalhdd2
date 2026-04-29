@@ -3,17 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <title>Accesorios - Tienda de GameHub</title>
-    <link rel="stylesheet" href="diseño.css">
-    <link rel="shortcut icon" href="Logo.png" type="image/x-icon">
+    <link rel="stylesheet" href="estilos/diseño.css">
+    <link rel="shortcut icon" href="imagenes/Logo.png" type="image/x-icon">
 </head>
 <body>
+    
 <header>
-    <div class="logo">GameHub</div>
+    <div class="header-left">
+        <div class="logo">GameHub</div>
+
+        <div class="auth-buttons">
+            <button class="btn-register" onclick="abrirRegistro()">Registrarse</button>
+            <button class="btn-login" onclick="abrirLogin()">Iniciar sesión</button>
+        </div>
+    </div>
+
     <nav>
         <ul>
             <li><a href="index.html">Inicio</a></li>
-            <li>Consolas</li>
-            <li>Juegos</li>
+            <li><a href="consola.html">Consolas</a></li>
+            <li><a href="juegos.html">Juegos</a></li>
             <li><a href="accesorios.html">Accesorios</a></li>
         </ul>
     </nav>
@@ -32,7 +41,7 @@
         <section class="accesorios-list">
             <article class="accesorio-card">
                 <figure>
-                    <img src="audifonosgamer.webp" alt="Auriculares gaming RGB">
+                    <img src="imagenes/audifonosgamer.webp" alt="Auriculares gaming RGB">
                 </figure>
                 <div class="card-content">
                     <h2>Auriculares RGB</h2>
@@ -44,7 +53,7 @@
 
             <article class="accesorio-card">
                 <figure>
-                    <img src="tecladogamer.webp" alt="Teclado mecanico para gaming">
+                    <img src="imagenes/tecladogamer.webp" alt="Teclado mecanico para gaming">
                 </figure>
                 <div class="card-content">
                     <h2>Teclado mecánico gamer</h2>
@@ -56,7 +65,7 @@
 
             <article class="accesorio-card">
                 <figure>
-                    <img src="mouse.webp" alt="Mouse gamer ergonomico">
+                    <img src="imagenes/mouse.webp" alt="Mouse gamer ergonomico">
                 </figure>
                 <div class="card-content">
                     <h2>Mouse gamer</h2>
@@ -68,7 +77,7 @@
 
             <article class="accesorio-card">
                 <figure>
-                    <img src="mousepad.webp" alt="Alfombrilla gaming extragrande">
+                    <img src="imagenes/mousepad.webp" alt="Alfombrilla gaming extragrande">
                 </figure>
                 <div class="card-content">
                     <h2>Mousepad XL</h2>
@@ -79,7 +88,7 @@
             </article>
             <article class="accesorio-card">
                 <figure>
-                    <img src="sillagaming.webp" alt="Silla gamer ergonómica">
+                    <img src="imagenes/sillagaming.webp" alt="Silla gamer ergonómica">
                 </figure>
                 <div class="card-content">
                     <h2>Silla gamer</h2>
@@ -90,7 +99,7 @@
             </article>
             <article class="accesorio-card">
                 <figure>
-                    <img src="stream deck.jpg" alt="Monitor gamer curvo 27 pulgadas">
+                    <img src="imagenes/stream deck.jpg" alt="Monitor gamer curvo 27 pulgadas">
                 </figure>
                 <div class="card-content">
                     <h2>Monitor gamer</h2>
@@ -99,7 +108,97 @@
                     <a class="boton" href="#">Ver producto</a>
                 </div>
             </article>
+            <article class="accesorio-card">
+                <figure>
+                    <img src="imagenes/mandogamer.webp" alt="Mando gamer inalámbrico">
+                </figure>
+                <div class="card-content">
+                    <h2>Mando inalámbrico</h2>
+                    <p>Compatible con PC y consolas, diseño ergonómico y botones programables.</p>
+                    <span class="precio">S/ 249.00</span>
+                    <a class="boton" href="#">Ver producto</a>
+                </div>
+            </article>
+            <article class="accesorio-card">
+                <figure>
+                    <img src="imagenes/soporteaudifonos.webp" alt="Soporte para auriculares gamer">
+                </figure>
+                <div class="card-content">
+                    <h2>Soporte para auriculares</h2>
+                    <p>Organiza tu escritorio y mantén tus auriculares a mano con estilo.</p>
+                    <span class="precio">S/ 49.90</span>
+                    <a class="boton" href="#">Ver producto</a>
+                </div>
+            </article>
+            <article class="accesorio-card">
+                <figure>
+                    <img src="imagenes/monitorgamer.webp" alt="Monitor gamer curvo 27 pulgadas">
+                </figure>
+                <div class="card-content">
+                    <h2>Monitor gamer</h2>
+                    <p>Adaptable para redirigir a los accesos directos al momento de tus Streams</p>
+                    <span class="precio">S/ 170.90</span>
+                    <a class="boton" href="#">Ver producto</a>
+                </div>
+            </article>
+            <article class="accesorio-card">
+                <figure>
+                    <img src="imagenes/webcam.webp" alt="Webcam para streaming">
+                </figure>
+                <div class="card-content">
+                    <h2>Webcam para streaming</h2>
+                    <p>Calidad Full HD, micrófono integrado y fácil configuración para tus transmisiones.</p>
+                    <span class="precio">S/ 89.90</span>
+                    <a class="boton" href="#">Ver producto</a>
+                </div>
+            </article>
+            <article class="accesorio-card">
+                <figure>
+                    <img src="imagenes/soportelaptop.webp" alt="Soporte para laptop">
+                </figure>
+                <div class="card-content">
+                    <h2>Soporte para laptop</h2>
+                    <p>Permite tener tu laptop en una posición ergonómica y cómoda mientras trabajas o juegas.</p>
+                    <span class="precio">S/ 79.90</span>
+                    <a class="boton" href="#">Ver producto</a>
+                </div>
+            </article>
+            <article class="accesorio-card">
+                <figure>
+                    <img src="imagenes/volantegamer.webp" alt="Volante gamer">
+                </figure>
+                <div class="card-content">
+                    <h2>Volante gamer</h2>
+                    <p>Simulación realista de conducción con retroalimentación háptica y diseño ergonómico.</p>
+                    <span class="precio">S/ 299.90</span>
+                    <a class="boton" href="#">Ver producto</a>
+                </div>
+            </article>
         </section>
     </main>
+
+    <!-- MODAL REGISTRO -->
+<div id="modalRegistro" class="modal">
+    <div class="modal-contenido">
+        <span class="cerrar" onclick="cerrarRegistro()">&times;</span>
+        <h2>Registro 🎮</h2>
+        <input type="text" id="nuevoUsuario" placeholder="Usuario">
+        <input type="password" id="nuevaPassword" placeholder="Contraseña">
+        <button onclick="registrarUsuario()">Registrarse</button>
+    </div>
+</div>
+
+<!-- MODAL LOGIN -->
+<div id="modalLogin" class="modal">
+    <div class="modal-contenido">
+        <span class="cerrar" onclick="cerrarLogin()">&times;</span>
+        <h2>Iniciar Sesión 🎮</h2>
+        <input type="text" id="usuario" placeholder="Usuario">
+        <input type="password" id="password" placeholder="Contraseña">
+        <button onclick="iniciarSesion()">Entrar</button>
+    </div>
+</div>
+
+<script src="funciones/funciones.js"></script> 
 </body>
 </html>
